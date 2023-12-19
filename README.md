@@ -1,54 +1,12 @@
-# Astro Starter Kit: Basics
+<h1>Dispatcher Cheat Sheet</h1>
 
-```sh
-npm create astro@latest -- --template basics
-```
+This project has evolved multiple times, from a simple single page schedule app written in vanilla JavaScript, to now having multiple pages and functions made with Astro and TypeScript.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+A passion project of mine as a 911 Dispatcher, this project makes my life much easier on a daily basis and will scale up as I find new ways to simplify my daily tasks. This project has grown with me as I've grown as a developer, and will continue to do so.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+<p>An Age Calculator! This page takes only the input for a person's date of birth and will return their age based on the current date, useful for when a caller may have a patient's ID handy and don't know their age of the top of their head. Of course an estimate is ok but why wouldn't you want to have the right age!</p>
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+<p>A Schedule Generator! assuming your work schedule doesn't follow the standard week. For example I work 4 days followed by two days off, so every week my work days are different. This makes scheduling events and appointments nearly impossible if you have to plan them far in advance, to combat that I put together this schedule generator that takes 4 inputs: How many days you work in your rotation, how many days you have off between your work rotations, How many days you want to see ahead and lastly the first day of any of your rotations to build the schedule off of.</p>
 
-## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
