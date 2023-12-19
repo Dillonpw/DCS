@@ -1,0 +1,34 @@
+---
+const { title, content } = Astro.props;
+---
+
+<div class="infoBox">
+  <button id="popBtn">{title}</button>
+
+  <div id="moreInfo" style="display: none">
+    <p>{content}</p>
+  </div>
+</div>
+<script>
+  function toggleInfoDisplay() {
+    const popUp = document.getElementById("moreInfo");
+    const button = document.getElementById("popBtn");
+
+    if (popUp && button) {
+      const isInfoVisible = popUp.style.display === "flex";
+      popUp.style.display = isInfoVisible ? "none" : "flex";
+      button.style.display = isInfoVisible ? "flex" : "none";
+    }
+  }
+
+  function initializeEventListeners() {
+    document.addEventListener("click", (event) => {
+      const target = event.target as HTMLElement;
+      if (target.matches("#popBtn") || target.closest("#moreInfo")) {
+        toggleInfoDisplay();
+      }
+    });
+  }
+
+  initializeEventListeners();
+</script>

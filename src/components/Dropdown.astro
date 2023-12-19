@@ -1,0 +1,28 @@
+---
+
+---
+
+<div id="navBar">
+  <nav id="navHeader">&#8801;</nav>
+  <div id="dropdown">
+    <a class="menu" href="/">Home</a>
+    <a class="menu" href="/calculatorPage">Age Calculator</a>
+    <a class="menu" href="/schedulePage">Schedule App</a>
+  </div>
+</div>
+<script>
+ function toggleDropdown() {
+    const dropdown = document.getElementById("dropdown");
+    if (dropdown) {
+      dropdown.classList.toggle("show");
+    } else {
+      console.error("Dropdown element not found");
+    }
+  }
+
+  document.addEventListener("click", (event) => {
+    const isNavHeader = event.target.matches("#navHeader") || event.target.closest("#navHeader");
+    if (isNavHeader) {
+      toggleDropdown();
+    }
+  });

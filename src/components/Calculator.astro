@@ -1,0 +1,93 @@
+---
+import Modal from "./Modal.astro";
+const title = "More Info";
+const modal =
+  "This one is pretty straight-forward; Just type in the year the person was born and when submitted, the person's age based off of today's date will be returned!";
+---
+
+<main class="container">
+  <Modal title={title} content={modal} />
+  <form id="ageForm">
+    <label for="year">Birth Year</label>
+    <input id="year" type="number" minlength="4" maxlength="4" required />
+    <button type="submit">Submit</button>
+    <h3 id="result"></h3>
+  </form>
+</main>
+<script>
+  let ageResult = "Patient is: " + "";
+
+  function calcYearDiff(year: number): number {
+    const currentYear = new Date().getFullYear();
+    return currentYear - year;
+  }
+
+  function handleSubmit(event: Event): void {
+    event.preventDefault();
+    const yearInput = document.getElementById(
+      "year",
+    ) as HTMLInputElement | null;
+    if (yearInput) {
+      const year = parseInt(yearInput.value);
+      if (!isNaN(year)) {
+        const age = calcYearDiff(year);
+        displayResult(age);
+        setCookie("year", year.toString(), 30);
+        setCookie("result", age.toString(), 30);
+      }
+    }
+  }
+
+  function displayResult(age: number): void {
+    ageResult = `Patient is: ${age}`;
+    const resultDiv = document.getElementById(
+      "result",
+    ) as HTMLDivElement | null;
+    if (resultDiv) {
+      resultDiv.textContent = ageResult;
+    }
+  }
+
+  function setCookie(name: string, value: string, daysToExpire: number): void {
+    const date = new Date();
+    date.setTime(date.getTime() + daysToExpire * 24 * 60 * 60 * 1000);
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+  }
+
+  function getCookie(name: string): string | null {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(";");
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) === " ") c = c.substring(1);
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length);
+    }
+    return null;
+  }
+
+  function prefillInputs(): void {
+    const yearInput = document.getElementById("year") as HTMLInputElement;
+    yearInput.value = getCookie("year") || "";
+
+    const resultDiv = document.getElementById("result") as HTMLDivElement;
+    resultDiv.textContent = ageResult || getCookie("result") || "";
+  }
+
+  function initializeEventListeners() {
+    const ageForm = document.getElementById(
+      "ageForm",
+    ) as HTMLFormElement | null;
+    if (ageForm) {
+      ageForm.removeEventListener("submit", handleSubmit as EventListener);
+      ageForm.addEventListener("submit", handleSubmit as EventListener);
+    }
+    prefillInputs();
+  }
+
+  initializeEventListeners();
+
+  document.addEventListener("astro:after-swap", () => {
+    initializeEventListeners();
+  });
+</script>

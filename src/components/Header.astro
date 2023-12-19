@@ -1,0 +1,13 @@
+---
+interface Props {
+  title: string;
+}
+
+import Logo from "./Logo.astro";
+import Dropdown from "./Dropdown.astro";
+---
+
+<header class="header">
+  <Logo />
+  <Dropdown client:load/>
+</header>

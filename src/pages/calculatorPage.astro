@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Calculator from "../components/Calculator.astro";
+const title = "Age Caluclator";
+
+---
+
+<Layout title={title}>
+<Calculator client:load/>
+</Layout>
