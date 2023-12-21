@@ -94,7 +94,13 @@ h1 {
     margin-left: 1rem;
 }
 
-
+.reviews{
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 #infoBox {
     display: flex;

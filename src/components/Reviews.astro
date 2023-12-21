@@ -1,0 +1,55 @@
+---
+
+---
+
+<section class="reviews">
+    <h3>If you found this useful, leave us a review!</h3>
+    <form id="reviewForm">
+        <label for="user">Name:</label>
+        <input type="text" id="user" name="user">
+        <label for="text">Review:</label>
+        <textarea id="text" name="text" cols="30" rows="10"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="reviewsContainer"></div>
+</section>
+
+<script type="module">
+    type Review = {
+  user: string,
+  text: string,
+};
+  const reviews: Review[] = [];
+
+  const form = document.getElementById('reviewForm') as HTMLFormElement;
+  const reviewsContainer = document.getElementById('reviewsContainer') as HTMLDivElement;
+
+  form.addEventListener('submit', (event: Event) => {
+  event.preventDefault();
+  console.log("Form submitted");
+
+  const user = (form.elements.namedItem('user') as HTMLInputElement).value.trim();
+  const text = (form.elements.namedItem('text') as HTMLTextAreaElement).value.trim();
+
+  console.log("User:", user, "Text:", text);
+
+  if (user && text) {
+    reviews.unshift({ user, text });
+    console.log("New review added:", reviews);
+    form.reset();
+    displayReviews();
+  } else {
+    console.log("Form fields are empty");
+  }
+});
+
+function displayReviews(): void {
+  const recentReviews = reviews.slice(0, 3);
+  console.log("Displaying reviews:", recentReviews); 
+  reviewsContainer.innerHTML = recentReviews.map(review =>
+    `<div><h4>${review.user}</h4><p>${review.text}</p></div>`
+  ).join('');
+}
+
+
+</script>
