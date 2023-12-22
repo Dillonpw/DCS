@@ -121,12 +121,6 @@ h1 {
   transform 0.2s;
 }
 
-.video:hover {
-  box-shadow: 0px 2px 2px 0px;
-  transform: translateY(2px);
-
-}
-
 #infoBox {
   display: flex;
   justify-content: center;
