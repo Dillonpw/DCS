@@ -1,0 +1,156 @@
+---
+
+---
+
+<section class="container">
+  <div id="box">
+    <form>
+      <label for="searchQuery"></label>
+      <input
+        type="text"
+        id="searchQuery"
+        name="searchQuery"
+        required
+        placeholder="Search"
+      />
+      <button id="weatherBtn" type="submit">
+        &#128269;
+      </button>
+    </form>
+    <div id="locationDiv">
+      <img id="weatherImg" src="" />
+      <div id="conditionDiv">
+        <h2>Condition</h2>
+        <h3 id="conditionData">- -</h3>
+      </div>
+      <div id="tempDiv">
+        <h2>Temperature</h2>
+        <h3 id="tempDataF">- -</h3>
+        <h3 id="tempDataC">- -</h3>
+      </div>
+      <div id="windDiv">
+        <h2>Wind Speed</h2>
+        <h3 id="windDataUS">- -</h3>
+        <h3 id="windDataEU">- -</h3>
+      </div>
+    </div>
+  </div>
+  <div class="toggleInfo">
+    <p>Imperial</p>
+    <label class="switch">
+      <input id="mode" type="checkbox" />
+      <span class="slider round"></span>
+    </label>
+    <p>Metric</p>
+  </div>
+</section>
+<script>
+  const API_KEY: string = "f65307767e03462881b163921233009";
+
+  const searchQueryElement: HTMLInputElement = document.getElementById(
+    "searchQuery",
+  ) as HTMLInputElement;
+  const locationName: HTMLElement = document.getElementById(
+    "locationName",
+  ) as HTMLElement;
+  const weatherData: HTMLElement = document.getElementById(
+    "conditionData",
+  ) as HTMLElement;
+  const weatherImg: HTMLImageElement = document.getElementById(
+    "weatherImg",
+  ) as HTMLImageElement;
+  const tempDataF: HTMLElement = document.getElementById(
+    "tempDataF",
+  ) as HTMLElement;
+  const tempDataC: HTMLElement = document.getElementById(
+    "tempDataC",
+  ) as HTMLElement;
+  const windDataUS: HTMLElement = document.getElementById(
+    "windDataUS",
+  ) as HTMLElement;
+  const windDataEU: HTMLElement = document.getElementById(
+    "windDataEU",
+  ) as HTMLElement;
+  const errorTip: HTMLElement = document.getElementById(
+    "errorTip",
+  ) as HTMLElement;
+
+  tempDataC.style.display = "none";
+  windDataEU.style.display = "none";
+  tempDataF.style.display = "block";
+  windDataUS.style.display = "block";
+  errorTip.style.display = "none";
+
+  interface WeatherApiResponse {
+    location: {
+      name: string;
+    };
+    current: {
+      condition: {
+        icon: string;
+        text: string;
+      };
+      temp_f: number;
+      temp_c: number;
+      wind_mph: number;
+      wind_kph: number;
+    };
+  }
+
+  async function getLocation(e: Event): Promise<void> {
+    e.preventDefault();
+    errorTip.style.display = "none";
+
+    const response: Response = await fetch(
+      `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${searchQueryElement.value}&aqi=no`,
+      { mode: "cors" },
+    );
+    const data: WeatherApiResponse = await response.json();
+    console.log(data);
+
+    const location: string = data.location.name;
+    const iconCode: string = data.current.condition.icon
+      .split("/")
+      .pop() as string;
+    const weather: string = data.current.condition.text;
+    const temperatureF: number = data.current.temp_f;
+    const temperatureC: number = data.current.temp_c;
+    const windSpeedUS: number = data.current.wind_mph;
+    const windSpeedEU: number = data.current.wind_kph;
+
+    locationName.innerText = location;
+    weatherImg.src = `assets/${iconCode}`;
+    weatherData.innerText = weather;
+    tempDataF.innerText = `${temperatureF}° F`;
+    tempDataC.innerText = `${temperatureC}° C`;
+    windDataUS.innerText = `${windSpeedUS} MPH`;
+    windDataEU.innerText = `${windSpeedEU} KPH`;
+
+    tempDataC.style.display = "none";
+    windDataEU.style.display = "none";
+    tempDataF.style.display = "block";
+    windDataUS.style.display = "block";
+  }
+
+  const weatherBtn: HTMLElement | null = document.getElementById('weatherBtn');
+  document
+    .getElementById("mode")!
+    .addEventListener("change", (event: Event) => {
+      const isChecked: boolean = (event.target as HTMLInputElement).checked;
+
+      tempDataF.style.display = isChecked ? "none" : "block";
+      windDataUS.style.display = isChecked ? "none" : "block";
+      tempDataC.style.display = isChecked ? "block" : "none";
+      windDataEU.style.display = isChecked ? "block" : "none";
+    });
+
+  document;
+  document
+    .getElementById("searchQuery")!
+    .addEventListener("keydown", (e: KeyboardEvent) => {
+      if (e.key === "Enter") {
+        getLocation(e);
+        e.preventDefault();
+      }
+    });
+</script>
