@@ -191,7 +191,7 @@ button:hover {
 }
 
 #ageForm,
-#scheduling {
+#scheduling, #box {
   color: black;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -259,23 +259,6 @@ tr:nth-child(odd) {
   text-align: center;
 }
 
-#box {
-  color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 80%;
-  min-width: 50%;
-  margin-top: 2rem;
-  margin-bottom: 6rem;
-  border-radius: 2rem;
-  border: 2px solid gray;
-  padding: 3rem;
-  background-color: white;
-  box-shadow: 3.6px 7.2px 7.2px hsl(0deg 0% 0% / 0.39);
-}
-
 #weatherBtn {
   background: none;
   box-shadow: none;
@@ -286,32 +269,13 @@ tr:nth-child(odd) {
   transform: scale(1.3);
 }
 
-#locationDiv {
-  display: grid;
-  grid-template-columns: repeat(1fr, 3);
-  grid-template-rows: repeat(1fr, 2);
-  gap: 2rem;
-}
-
-#conditionDiv,
-#tempDiv,
-#windDiv {
-  display: flex;
+#box{
+  display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-#conditionDiv {
-  grid-area: 2/1/3/2;
-}
 
-#tempDiv {
-  grid-area: 2/2/3/3;
-}
-
-#windDiv {
-  grid-area: 2/3/3/4;
-}
 
 .toggleInfo {
   display: flex;
