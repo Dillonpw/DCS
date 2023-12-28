@@ -37,6 +37,12 @@ body {
   );
   background-attachment: fixed;
 }
+
+.header{
+  box-shadow: 1px 6px 2px 1px;
+
+}
+
 #navHeader {
   display: none;
   cursor: pointer;
@@ -106,6 +112,7 @@ h1 {
 }
 
 .videoBox {
+  background-color: black;
   margin-top: 10rem;
   color: black;
   padding: 3rem;
@@ -114,11 +121,7 @@ h1 {
 .video {
   margin-top: 2rem;
   border-radius: 0.5rem;
-  border: 2px solid gray;
-  box-shadow: 1px 3px 2px 1px;
-  transition:
-    box-shadow 0.2s,
-    transform 0.2s;
+  border: 2px solid black;
 }
 
 #infoBox {
@@ -198,11 +201,11 @@ button:hover {
   grid-gap: 0.25rem;
   max-width: 60%;
   min-width: 50%;
-  margin-top: 2rem;
+  margin-top: 6rem;
   margin-bottom: 6rem;
   border-radius: 2rem;
   border: 2px solid gray;
-  padding: 3rem;
+  padding: 5rem;
   background-color: white;
   box-shadow: 3.6px 7.2px 7.2px hsl(0deg 0% 0% / 0.39);
 }
@@ -220,6 +223,9 @@ textarea {
   width: 100%;
 }
 
+#ageForm{
+  min-height:300px ;
+}
 input {
   border: 2px solid black;
   border-radius: 0.5rem;
@@ -274,11 +280,21 @@ tr:nth-child(odd) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
+#weatherImg{
+  margin-top: 2rem;
+}
+
+#conditionDiv, #tempDiv, #windDiv{
+  margin:3rem;
+  font-size: 20px;
+}
 
 .toggleInfo {
   display: flex;
+  margin: 1rem;
   gap: 2rem;
   align-items: center;
 }

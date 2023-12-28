@@ -1,10 +1,15 @@
 ---
-
+import Modal from "./Modal.astro";
+const title = "More Info";
+const modal =
+"Search for your city or town, and see a few important weather aspects populate below. \nUse the Toggle to switch between Imperial and Metric measurements."
 ---
 
 <section class="container">
+  <Modal title={title} content={modal} />
+
   <div id="box">
-    <form>
+    <form onsubmit="getLocation()">
       <label for="searchQuery"></label>
       <input
         type="text"
@@ -13,9 +18,7 @@
         required
         placeholder="Search"
       />
-      <button id="weatherBtn" type="submit">
-        &#128269;
-      </button>
+      <button id="weatherBtn" type="submit"> &#128269;</button>
     </form>
     <div id="locationDiv">
       <img id="weatherImg" src="" />
@@ -50,11 +53,12 @@
   const searchQueryElement: HTMLInputElement = document.getElementById(
     "searchQuery",
   ) as HTMLInputElement;
-
   const weatherData: HTMLElement = document.getElementById(
     "conditionData",
   ) as HTMLElement;
-
+  const weatherImg: HTMLImageElement = document.getElementById(
+    "weatherImg",
+  ) as HTMLImageElement;
   const tempDataF: HTMLElement = document.getElementById(
     "tempDataF",
   ) as HTMLElement;
@@ -67,7 +71,12 @@
   const windDataEU: HTMLElement = document.getElementById(
     "windDataEU",
   ) as HTMLElement;
-
+  const weatherBtn: HTMLElement = document.getElementById(
+    "weatherBtn",
+  ) as HTMLElement;
+  const modeCheckbox: HTMLInputElement = document.getElementById(
+    "mode",
+  ) as HTMLInputElement;
 
   tempDataC.style.display = "none";
   windDataEU.style.display = "none";
@@ -98,38 +107,26 @@
       { mode: "cors" },
     );
     const data: WeatherApiResponse = await response.json();
-    console.log(data);
 
+    weatherData.innerText = data.current.condition.text;
+    tempDataF.innerText = `${data.current.temp_f}° F`;
+    tempDataC.innerText = `${data.current.temp_c}° C`;
+    windDataUS.innerText = `${data.current.wind_mph} MPH`;
+    windDataEU.innerText = `${data.current.wind_kph} KPH`;
 
-    const weather: string = data.current.condition.text;
-    const temperatureF: number = data.current.temp_f;
-    const temperatureC: number = data.current.temp_c;
-    const windSpeedUS: number = data.current.wind_mph;
-    const windSpeedEU: number = data.current.wind_kph;
-
-    weatherData.innerText = weather;
-    tempDataF.innerText = `${temperatureF}° F`;
-    tempDataC.innerText = `${temperatureC}° C`;
-    windDataUS.innerText = `${windSpeedUS} MPH`;
-    windDataEU.innerText = `${windSpeedEU} KPH`;
-
-    tempDataC.style.display = "none";
-    windDataEU.style.display = "none";
-    tempDataF.style.display = "block";
-    windDataUS.style.display = "block";
+    const iconCode = data.current.condition.icon.split('/').pop()?.split('.')[0];
+    if (iconCode) {
+      weatherImg.src = `public/assets/${iconCode}.png`
+    }
   }
 
-  const weatherBtn: HTMLElement | null = document.getElementById('weatherBtn');
-  document
-    .getElementById("mode")!
-    .addEventListener("change", (event: Event) => {
-      const isChecked: boolean = (event.target as HTMLInputElement).checked;
+  weatherBtn.addEventListener("click", getLocation);
 
-      tempDataF.style.display = isChecked ? "none" : "block";
-      windDataUS.style.display = isChecked ? "none" : "block";
-      tempDataC.style.display = isChecked ? "block" : "none";
-      windDataEU.style.display = isChecked ? "block" : "none";
-    });
-
-
+  modeCheckbox.addEventListener("change", (event: Event) => {
+    const isChecked: boolean = (event.target as HTMLInputElement).checked;
+    tempDataF.style.display = isChecked ? "none" : "block";
+    windDataUS.style.display = isChecked ? "none" : "block";
+    tempDataC.style.display = isChecked ? "block" : "none";
+    windDataEU.style.display = isChecked ? "block" : "none";
+  });
 </script>
