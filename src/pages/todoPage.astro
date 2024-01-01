@@ -1,0 +1,15 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Todo from "../components/todo.tsx";
+import Modal from "../components/Modal.astro";
+const title = "Todo List";
+const modal =
+  "Enter your daily tasks and treat this page like a checklist, make sure all are done before your shift ends!";
+---
+
+<Layout title={title}>
+  <div class="container">
+    <Modal content={modal} />
+    <Todo client:load />
+  </div>
+</Layout>
