@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 import AddTask from "./AddTask";
 import TaskList from "./TaskList";
 import "../styles/styles.css";
-
-
 
 interface Task {
   id: number;
@@ -16,7 +14,7 @@ const Todo: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>(getInitialTasks());
 
   useEffect(() => {
-    Cookies.set("tasks", JSON.stringify(tasks), { expires: 7 });
+    Cookies.set("tasks", JSON.stringify(tasks), { expires: 7, sameSite: 'Lax' });
   }, [tasks]);
 
   function handleAddTask(text: string) {
@@ -39,15 +37,13 @@ const Todo: React.FC = () => {
   }
 
   return (
-    <div className="container">
-        <form className="todoForm">
-      <AddTask onAddTask={handleAddTask} />
-      <TaskList
-        tasks={tasks}
-        onChangeTask={handleChangeTask}
-        onDeleteTask={handleDeleteTask}
-      />
-      </form>
+    <div className="container todoForm">
+        <AddTask onAddTask={handleAddTask} />
+        <TaskList
+          tasks={tasks}
+          onChangeTask={handleChangeTask}
+          onDeleteTask={handleDeleteTask}
+        />
     </div>
   );
 };

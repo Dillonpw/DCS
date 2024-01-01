@@ -19,7 +19,7 @@ const AddTask: React.FC<AddTaskProps> = ({ onAddTask }) => {
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        placeholder="Add a new task"
+        placeholder="What else?"
       />
       <button type="submit">Add Task</button>
     </form>
