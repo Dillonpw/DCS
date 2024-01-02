@@ -55,9 +55,9 @@ function getInitialTasks(): Task[] {
   return savedTasks
     ? JSON.parse(savedTasks)
     : [
-        { id: 0, text: "Visit Kafka Museum", done: false },
-        { id: 1, text: "Watch a puppet show", done: false },
-        { id: 2, text: "Lennon Wall pic", done: false },
+        { id: 0, text: "Log into systems", done: false },
+        { id: 1, text: "Check the schedule", done: false },
+        { id: 2, text: "Test radios and tones", done: false },
       ];
 }
 

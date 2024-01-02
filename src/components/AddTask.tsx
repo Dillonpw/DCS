@@ -7,7 +7,7 @@ interface AddTaskProps {
 const AddTask: React.FC<AddTaskProps> = ({ onAddTask }) => {
   const [input, setInput] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onAddTask(input);
     setInput('');
@@ -15,10 +15,12 @@ const AddTask: React.FC<AddTaskProps> = ({ onAddTask }) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <label htmlFor="taskInput">Task:</label>
       <input
+        id="taskInput"
         type="text"
         value={input}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInput(e.target.value)}
         placeholder="What else?"
       />
       <button type="submit">Add Task</button>
