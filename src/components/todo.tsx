@@ -48,17 +48,21 @@ const Todo: React.FC = () => {
   );
 };
 
-let nextId = 3;
+let nextId = getInitialMaxId() + 1;
 
 function getInitialTasks(): Task[] {
   const savedTasks = Cookies.get("tasks");
-  return savedTasks
-    ? JSON.parse(savedTasks)
-    : [
-        { id: 0, text: "Log into systems", done: false },
-        { id: 1, text: "Check the schedule", done: false },
-        { id: 2, text: "Test radios and tones", done: false },
-      ];
+  const tasks = savedTasks ? JSON.parse(savedTasks) : [
+    { id: 0, text: "Log into systems", done: false },
+    { id: 1, text: "Check the schedule", done: false },
+    { id: 2, text: "Test radios and tones", done: false },
+  ];
+  return tasks;
+}
+
+function getInitialMaxId(): number {
+  const tasks = getInitialTasks();
+  return tasks.reduce((maxId, task) => Math.max(task.id, maxId), -1);
 }
 
 export default Todo;
