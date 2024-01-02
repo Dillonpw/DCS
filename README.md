@@ -8,5 +8,6 @@ A passion project of mine as a 911 Dispatcher, this project makes my life much e
 
 <p>A Schedule Generator! assuming your work schedule doesn't follow the standard week. For example I work 4 days followed by two days off, so every week my work days are different. This makes scheduling events and appointments nearly impossible if you have to plan them far in advance, to combat that I put together this schedule generator that takes 4 inputs: How many days you work in your rotation, how many days you have off between your work rotations, How many days you want to see ahead and lastly the first day of any of your rotations to build the schedule off of.</p>
 
+<p>A Weather App! Quickly check the weather by entering the city you are in or are curious about and see a few features of the weather in that area.</p>
 
-
+<p>A Checklist! a changeable checklist that uses cookies to recall data added to the checklist so it can be reused on a daily basis, for this partiuclar usage it can be helpful for new dispatchers to recall what they have to do every day and use it to make sure every box is checked at the end of their shift.</p>
