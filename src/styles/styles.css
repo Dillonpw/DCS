@@ -371,8 +371,8 @@ input:checked + .slider:before {
 
 .todoForm{
   color: black;
-  display:flex;
-  flex-direction: column;
+  display:grid;
+  grid-template-columns: repeat(1fr,3);
   margin-top: 6rem;
   margin-bottom: 6rem;
   border-radius: 2rem;
@@ -381,6 +381,8 @@ input:checked + .slider:before {
   background-color: white;
   box-shadow: 3.6px 7.2px 7.2px hsl(0deg 0% 0% / 0.39);
 }
+
+
 
 
 
