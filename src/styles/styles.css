@@ -49,7 +49,7 @@ body {
 #dropdown {
   display: flex;
   flex-direction: row;
-  margin-left:.5rem;
+  margin-left: 0.5rem;
   gap: 1rem;
 }
 a {
@@ -69,7 +69,7 @@ li {
   color: black;
   display: flex;
   flex-direction: column;
-  padding: .75rem;
+  padding: 0.75rem;
   justify-content: center;
   align-items: center;
   user-select: none;
@@ -149,7 +149,7 @@ button {
   box-shadow: 1px 3px 2px 1px;
   color: black;
   padding: 1rem 1rem;
-  grid-area: 5/1/6/3;
+
   transition:
     box-shadow 0.2s,
     transform 0.2s;
@@ -206,7 +206,8 @@ button:hover {
 
 #ageForm,
 #scheduling,
-#box {
+#box,
+.todoForm {
   color: black;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -298,7 +299,8 @@ tr:nth-child(odd) {
 }
 
 #weatherImg {
-  margin-top: 2rem;
+  margin-top: 1rem;
+  width:10rem;
 }
 
 #conditionDiv,
@@ -306,6 +308,14 @@ tr:nth-child(odd) {
 #windDiv {
   margin: 3rem;
   font-size: 20px;
+}
+
+#tempDataC {
+  display: none;
+}
+
+#windDataEU {
+  display: none;
 }
 
 .toggleInfo {
@@ -369,10 +379,10 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.todoForm{
+.todoForm {
   color: black;
-  display:grid;
-  grid-template-columns: repeat(1fr,3);
+  display: flex;
+  flex-direction: column;
   margin-top: 6rem;
   margin-bottom: 6rem;
   border-radius: 2rem;
@@ -382,18 +392,58 @@ input:checked + .slider:before {
   box-shadow: 3.6px 7.2px 7.2px hsl(0deg 0% 0% / 0.39);
 }
 
+#addForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+#addForm > input {
+  grid-column: 1;
+}
 
+#addForm > button {
+  grid-column: 2;
+}
 
+#taskList > div {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  grid-gap: 0.25rem;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 3px solid black;
+}
 
+#taskList > div > input,
+#taskList > div > span,
+#taskList > div > button {
+  margin: 0;
+}
+
+#taskList > div > input {
+  grid-column: 1;
+}
+
+#taskList > div > span {
+  grid-column: 2;
+}
+
+#taskList > div > button {
+  grid-column: 3;
+}
 
 footer {
   margin-top: 10rem;
   display: flex;
+  color: white;
   justify-content: center;
   padding: 1rem;
   text-align: left;
   font-size: 14px;
-  border-top: 4px solid bkacl;
+  background-color: black;
 }
 
 footer a {

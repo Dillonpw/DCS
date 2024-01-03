@@ -14,7 +14,7 @@ const AddTask: React.FC<AddTaskProps> = ({ onAddTask }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form id="addForm" onSubmit={handleSubmit}>
       <label htmlFor="taskInput"></label>
       <input
         id="taskInput"
