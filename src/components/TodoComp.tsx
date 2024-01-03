@@ -14,7 +14,7 @@ const Todo: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>(getInitialTasks());
 
   useEffect(() => {
-    Cookies.set("tasks", JSON.stringify(tasks), { expires: 7, sameSite: 'Lax' });
+    Cookies.set("tasks", JSON.stringify(tasks), { expires: 100, sameSite: 'Lax' });
   }, [tasks]);
 
   function handleAddTask(text: string) {

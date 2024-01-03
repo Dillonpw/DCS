@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface Task {
   id: number;
@@ -12,12 +12,17 @@ interface TaskListProps {
   onDeleteTask: (taskId: number) => void;
 }
 
-const TaskList: React.FC<TaskListProps> = ({ tasks, onChangeTask, onDeleteTask }) => {
+const TaskList: React.FC<TaskListProps> = ({
+  tasks,
+  onChangeTask,
+  onDeleteTask,
+}) => {
   return (
-    <div id='taskList'>
+    <div id="taskList">
       {tasks.map((task) => (
         <div key={task.id}>
           <input
+            id="checkbox"
             type="checkbox"
             checked={task.done}
             onChange={() => onChangeTask({ ...task, done: !task.done })}

@@ -236,6 +236,11 @@ textarea {
   width: 100%;
 }
 
+#reviewBox > h3{
+  margin:2rem
+
+}
+
 #ageForm {
   min-height: 300px;
 }
@@ -395,14 +400,17 @@ input:checked + .slider:before {
 #addForm {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
 }
+
 #addForm > input {
   grid-column: 1;
+  min-width:120px ;
+  justify-self: center;
 }
 
 #addForm > button {
-  grid-column: 2;
+  grid-column: 3;
+  justify-self: center;
 }
 
 #taskList > div {
@@ -417,6 +425,10 @@ input:checked + .slider:before {
   border-bottom: 3px solid black;
 }
 
+#checkbox{
+  box-shadow: none;
+}
+
 #taskList > div > input,
 #taskList > div > span,
 #taskList > div > button {
@@ -425,6 +437,7 @@ input:checked + .slider:before {
 
 #taskList > div > input {
   grid-column: 1;
+
 }
 
 #taskList > div > span {
@@ -435,16 +448,22 @@ input:checked + .slider:before {
   grid-column: 3;
 }
 
+#taskList > div > button:hover{
+  background-color: red;
+  color:white;
+
+}
+
 footer {
-  margin-top: 10rem;
+  margin-top: 16rem;
   display: flex;
   color: white;
   justify-content: center;
-  padding: 1rem;
+  padding: 4rem;
   text-align: left;
   font-size: 14px;
   background-color: black;
-}
+  box-shadow: inset 0px 0px 6px white;}
 
 footer a {
   cursor: pointer;
@@ -511,6 +530,22 @@ a > i:hover {
   .videoBox > h3 {
     margin: 0;
   }
+
+  #ageForm > * {
+    margin-top:2rem
+  }
+
+  #box{
+    padding:2rem
+  }
+
+  #addForm{
+    justify-content: center;
+  }
+#addForm > input{
+  width:1rem;
+}
+
   a:hover {
     cursor: pointer;
     transform: scale(1.02);
