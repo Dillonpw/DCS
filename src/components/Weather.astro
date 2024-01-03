@@ -21,7 +21,7 @@ const modal =
       <button id="weatherBtn" type="submit"> &#128269;</button>
     </form>
     <div id="locationDiv">
-      <img id="weatherImg" src="" />
+      <img id="weatherImg" sr-only="Image for weather conditions" alt=" " src="" />
       <div id="conditionDiv">
         <h2>Condition</h2>
         <h3 id="conditionData">- -</h3>
@@ -40,7 +40,7 @@ const modal =
   </div>
   <div class="toggleInfo">
     <p>Imperial</p>
-    <label class="switch">
+    <label for='mode' class="switch">
       <input id="mode" type="checkbox" />
       <span class="slider round"></span>
     </label>
