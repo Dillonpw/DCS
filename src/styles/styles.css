@@ -126,8 +126,9 @@ h1 {
   padding: 3rem;
 }
 
-.videoBox > h3 {
-  margin: 0 4rem;
+.videoBox > h2 {
+  margin: 0;
+  font-size: 20px;
 }
 
 .video {
@@ -136,7 +137,8 @@ h1 {
   border: 2px solid black;
 }
 
-#infoBox {
+.infoBox {
+  margin-top:2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -223,6 +225,10 @@ button:hover {
   box-shadow: 3.6px 7.2px 7.2px hsl(0deg 0% 0% / 0.39);
 }
 
+#ageForm {
+  grid-template-columns: 1fr;
+}
+
 textarea {
   resize: none;
   overflow: hidden;
@@ -305,6 +311,11 @@ tr:nth-child(odd) {
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-bottom:1rem;
+}
+
+#box > form {
+  flex-direction: row;
 }
 
 #weatherImg {
@@ -546,6 +557,10 @@ a > i:hover {
     height: 60px;
   }
 
+  #reviewForm {
+    padding: 3rem;
+  }
+
   .videoBox > h3 {
     margin: 0;
   }
@@ -555,10 +570,6 @@ a > i:hover {
   }
   #ageForm > * {
     margin-top: 2rem;
-  }
-
-  #box {
-    padding: 2rem;
   }
 
   #addForm {
@@ -576,7 +587,7 @@ a > i:hover {
   }
 
   form {
-    width: 80%;
+    width: 100%;
   }
 
   table {
