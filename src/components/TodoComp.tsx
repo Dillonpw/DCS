@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import AddTask from "./AddTask";
 import TaskList from "./TaskList";
-import "../styles/styles.css";
 
 interface Task {
   id: number;
