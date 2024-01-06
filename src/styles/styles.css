@@ -227,7 +227,9 @@ button:hover {
 
 #ageForm {
   grid-template-columns: 1fr;
+  gap:2rem
 }
+
 
 textarea {
   resize: none;
