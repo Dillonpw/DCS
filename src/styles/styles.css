@@ -486,7 +486,7 @@ a > i:hover {
     font-size: 30px;
     border: 1px solid black;
     border-radius: 0.25rem;
-    background-color: white;
+    background-color: gold;
     box-shadow: 1px 3px 2px 1px;
     color: black;
     display: flex;
