@@ -2,7 +2,7 @@
 import Modal from "./Modal.astro";
 const title = "More Info";
 const modal =
-"Search for your city or town, and see a few important weather aspects populate below. \nUse the Toggle to switch between Imperial and Metric measurements."
+  "Search for your city or town, and see a few important weather aspects populate below. \nUse the Toggle to switch between Imperial and Metric measurements.";
 ---
 
 <section class="container">
@@ -21,7 +21,6 @@ const modal =
       <button id="weatherBtn" type="submit"> &#128269;</button>
     </form>
     <div id="locationDiv">
-      <img id="weatherImg" sr-only="Image for weather conditions" alt=" "  />
       <div id="conditionDiv">
         <h2>Condition</h2>
         <h3 id="conditionData">- -</h3>
@@ -30,6 +29,15 @@ const modal =
         <h2>Temperature</h2>
         <h3 id="tempDataF">- -</h3>
         <h3 id="tempDataC">- -</h3>
+      </div>
+      <div id="humidityDiv">
+        <h2>Humidity</h2>
+        <h3 id="humidityData">- -</h3>
+      </div>
+      <div id="visDiv">
+        <h2>Visibilty</h2>
+        <h3 id="visDataF">- -</h3>
+        <h3 id="visDataC">- -</h3>
       </div>
       <div id="windDiv">
         <h2>Wind Speed</h2>
@@ -40,7 +48,7 @@ const modal =
   </div>
   <div class="toggleInfo">
     <p>Imperial</p>
-    <label for='mode' class="switch">
+    <label for="mode" class="switch">
       <input id="mode" type="checkbox" />
       <span class="slider round"></span>
     </label>
@@ -56,14 +64,20 @@ const modal =
   const weatherData: HTMLElement = document.getElementById(
     "conditionData",
   ) as HTMLElement;
-  const weatherImg: HTMLImageElement = document.getElementById(
-    "weatherImg",
-  ) as HTMLImageElement;
   const tempDataF: HTMLElement = document.getElementById(
     "tempDataF",
   ) as HTMLElement;
+  const humidity: HTMLElement = document.getElementById(
+    "humidityData",
+  ) as HTMLElement;
   const tempDataC: HTMLElement = document.getElementById(
     "tempDataC",
+  ) as HTMLElement;
+  const visDataUS: HTMLElement = document.getElementById(
+    "visDataF",
+  ) as HTMLElement;
+  const visDataEU: HTMLElement = document.getElementById(
+    "visDataC",
   ) as HTMLElement;
   const windDataUS: HTMLElement = document.getElementById(
     "windDataUS",
@@ -79,8 +93,10 @@ const modal =
   ) as HTMLInputElement;
 
   tempDataC.style.display = "none";
+  visDataEU.style.display = "none";
   windDataEU.style.display = "none";
   tempDataF.style.display = "block";
+  visDataUS.style.display = "block;";
   windDataUS.style.display = "block";
 
   interface WeatherApiResponse {
@@ -89,11 +105,13 @@ const modal =
     };
     current: {
       condition: {
-        icon: string;
         text: string;
       };
       temp_f: number;
       temp_c: number;
+      humidity: number;
+      vis_miles: number;
+      vis_km: number;
       wind_mph: number;
       wind_kph: number;
     };
@@ -111,13 +129,12 @@ const modal =
     weatherData.innerText = data.current.condition.text;
     tempDataF.innerText = `${data.current.temp_f}° F`;
     tempDataC.innerText = `${data.current.temp_c}° C`;
+    humidity.innerText = `${data.current.humidity}`;
+    visDataUS.innerText = `${data.current.vis_miles} Miles`;
+    visDataEU.innerText = `${data.current.vis_km} KM`;
+
     windDataUS.innerText = `${data.current.wind_mph} MPH`;
     windDataEU.innerText = `${data.current.wind_kph} KPH`;
-
-    const iconCode = data.current.condition.icon.split('/').pop()?.split('.')[0];
-    if (iconCode) {
-      weatherImg.src = `public/assets/${iconCode}.png`
-    }
   }
 
   weatherBtn.addEventListener("click", getLocation);
@@ -125,8 +142,10 @@ const modal =
   modeCheckbox.addEventListener("change", (event: Event) => {
     const isChecked: boolean = (event.target as HTMLInputElement).checked;
     tempDataF.style.display = isChecked ? "none" : "block";
+    visDataUS.style.display = isChecked ? "none" : "block";
     windDataUS.style.display = isChecked ? "none" : "block";
     tempDataC.style.display = isChecked ? "block" : "none";
+    visDataEU.style.display = isChecked ? "block" : "none";
     windDataEU.style.display = isChecked ? "block" : "none";
   });
 </script>

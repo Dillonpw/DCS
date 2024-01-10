@@ -36,7 +36,7 @@ const Todo: React.FC = () => {
   }
 
   return (
-    <div className="container todoForm">
+    <div className="container todo">
         <AddTask onAddTask={handleAddTask} />
         <TaskList
           tasks={tasks}
