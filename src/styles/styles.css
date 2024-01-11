@@ -532,7 +532,7 @@ a > i:hover {
   #ageForm,
   #scheduling,
   #box,
-  .todoForm {
+  .todo {
     border: none;
     box-shadow: none;
     background-color: #ffffff00;
