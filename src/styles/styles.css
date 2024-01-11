@@ -1,3 +1,4 @@
+/* Utilities*/
 :root {
   --bg-color: #0000d0d6;
   --header-bg-color: #0000008b;
@@ -15,7 +16,7 @@
   font-size: 20px;
   margin: 0;
   padding: 0;
-  box-sizing: border-
+  box-sizing: border-;
 }
 
 html {
@@ -28,6 +29,7 @@ body {
   margin: 0;
   box-shadow: inset 0 0 14px gray;
 }
+
 .header {
   box-shadow: 1px 6px 2px 1px;
 }
@@ -93,64 +95,6 @@ h1 {
   margin-left: 1rem;
 }
 
-.reviews {
-  transition:
-    box-shadow 0.2s,
-    transform 0.2s;
-  background-color: var(--bg-color);
-  box-shadow:
-    3.6px 7.2px 7.2px black,
-    inset 0 0 14px white;
-  margin: 4rem;
-  color: white;
-  border: 3px solid black;
-  border-radius: 0.5rem;
-}
-
-.reviews:hover {
-  box-shadow:
-    0px 2px 2px 0px,
-    inset 0 0 14px white;
-  transform: translateY(2px);
-}
-
-.reviews,
-.videoBox {
-  margin-top: 10rem;
-  display: flex;
-  flex-direction: column;
-}
-
-#reviewForm {
-  margin-top: 2rem;
-  max-width: 80%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding-bottom: 4rem;
-}
-
-#reviewForm > button {
-  max-width: 15rem;
-}
-.videoBox {
-  background-color: black;
-  margin-top: 10rem;
-  color: white;
-  padding: 3rem;
-}
-
-.videoBox > h2 {
-  margin: 0;
-  font-size: 20px;
-}
-
-.video {
-  margin-top: 2rem;
-  border-radius: 0.5rem;
-  border: 2px solid black;
-}
-
 .infoBox {
   margin-top: 2rem;
   display: flex;
@@ -170,6 +114,12 @@ button {
   transition:
     box-shadow 0.2s,
     transform 0.2s;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 0px 2px 2px 0px;
+  transform: translateY(2px);
 }
 
 #moreInfo {
@@ -195,29 +145,6 @@ button {
 
 #moreInfo > p {
   line-height: 25px;
-}
-
-.container,
-#tableWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#tableWrapper {
-  width: 90%;
-}
-
-button:hover {
-  cursor: pointer;
-  box-shadow: 0px 2px 2px 0px;
-  transform: translateY(2px);
-}
-
-#generate {
-  margin-top: 3rem;
-  margin-bottom: 0;
 }
 
 #ageForm,
@@ -253,37 +180,6 @@ button:hover {
   transform: translateY(2px);
 }
 
-#ageForm {
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-textarea {
-  resize: none;
-  overflow: hidden;
-}
-
-#reviewBox {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-#reviewBox > h3 {
-  margin: 2rem;
-}
-
-#ageForm {
-  min-height: 300px;
-  max-height: none;
-}
-
-#ageForm > input {
-  margin-bottom: 2rem;
-}
-
 input,
 textarea {
   border: 2px solid black;
@@ -293,78 +189,8 @@ textarea {
   background-color: white;
   min-width: 80px;
   max-width: 220px;
+  min-height: 32px;
   box-shadow: 3.6px 7.2px 7.2px hsl(0deg 0% 0% / 0.39);
-}
-
-table {
-  width: 90%;
-  border-collapse: collapse;
-  box-shadow: 3.6px 7.2px 7.2px black;
-}
-
-th {
-  border: transparent;
-  text-align: center;
-  background-color: var(--header-bg-color);
-  color: white;
-  border: 1px solid var(--header-bg-color);
-  padding: 1rem;
-  margin: 1rem auto;
-}
-
-tr:nth-child(even) {
-  background-color: var(--even-row-color);
-  height: 3rem;
-  text-align: center;
-}
-
-tr:nth-child(odd) {
-  background-color: var(--odd-row-color);
-  height: 3rem;
-  text-align: center;
-}
-
-#weatherBtn {
-  background: none;
-  box-shadow: none;
-  border: none;
-}
-
-#weatherBtn:hover {
-  transform: scale(1.3);
-}
-
-#box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-#box > form {
-  flex-direction: row;
-}
-
-#weatherImg {
-  margin-top: 1rem;
-  width: 10rem;
-}
-
-#conditionDiv,
-#tempDiv,
-#windDiv,
-#humidityDiv,
-#visDiv {
-  margin: 3rem;
-  font-size: 20px;
-}
-
-#tempDataC,
-#windDataEU,
-#visDataC {
-  display: none;
 }
 
 .toggleInfo {
@@ -428,6 +254,200 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+footer {
+  margin-top: 16rem;
+  display: flex;
+  color: white;
+  justify-content: center;
+  padding: 4rem;
+  text-align: left;
+  font-size: 14px;
+  background-color: black;
+  box-shadow: inset 0px 0px 6px white;
+}
+
+footer a {
+  cursor: pointer;
+}
+
+a > i:hover {
+  transform: scale(1.2);
+}
+
+/* Home Page*/
+
+.reviews {
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
+  background-color: var(--bg-color);
+  box-shadow:
+    3.6px 7.2px 7.2px black,
+    inset 0 0 14px white;
+  margin: 4rem;
+  color: white;
+  border: 3px solid black;
+  border-radius: 0.5rem;
+}
+
+.reviews:hover {
+  box-shadow:
+    0px 2px 2px 0px,
+    inset 0 0 14px white;
+  transform: translateY(2px);
+}
+
+#reviewBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#reviewBox > h3 {
+  margin: 2rem;
+}
+
+#reviewsContainer {
+  padding: 6rem;
+}
+
+.reviews,
+.videoBox {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#reviewForm {
+  margin-top: 2rem;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#reviewForm > button {
+  max-width: 15rem;
+}
+.videoBox {
+  background-color: black;
+  margin-top: 10rem;
+  color: white;
+  padding: 3rem;
+}
+
+.videoBox > h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.video {
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  border: 2px solid black;
+}
+
+/* AgeCalc*/
+
+#ageForm {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+#ageForm > button {
+  max-width: 15rem;
+}
+
+#ageForm {
+  min-height: 300px;
+  max-height: none;
+}
+
+#ageForm > input {
+  margin-bottom: 2rem;
+}
+
+/* Schedule*/
+
+.container,
+#tableWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#tableWrapper {
+  width: 90%;
+}
+
+#generate {
+  margin-top: 3rem;
+  margin-bottom: 0;
+}
+
+table {
+  width: 90%;
+  border-collapse: collapse;
+  box-shadow: 3.6px 7.2px 7.2px black;
+}
+
+th {
+  border: transparent;
+  text-align: center;
+  background-color: var(--header-bg-color);
+  color: white;
+  border: 1px solid var(--header-bg-color);
+  padding: 1rem;
+  margin: 1rem auto;
+}
+
+tr:nth-child(even) {
+  background-color: var(--even-row-color);
+  height: 3rem;
+  text-align: center;
+}
+
+tr:nth-child(odd) {
+  background-color: var(--odd-row-color);
+  height: 3rem;
+  text-align: center;
+}
+
+/* Weather*/
+
+#box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#box > form {
+  flex-direction: row;
+}
+
+#conditionDiv,
+#tempDiv,
+#windDiv,
+#humidityDiv,
+#visDiv {
+  margin: 3rem;
+  font-size: 20px;
+}
+
+#tempDataC,
+#windDataEU,
+#visDataC {
+  display: none;
+}
+
+/* Checklist*/
+
 .todo {
   color: black;
   display: flex;
@@ -488,25 +508,7 @@ input:checked + .slider:before {
   background-color: var(--button-active);
 }
 
-footer {
-  margin-top: 16rem;
-  display: flex;
-  color: white;
-  justify-content: center;
-  padding: 4rem;
-  text-align: left;
-  font-size: 14px;
-  background-color: black;
-  box-shadow: inset 0px 0px 6px white;
-}
-
-footer a {
-  cursor: pointer;
-}
-
-a > i:hover {
-  transform: scale(1.2);
-}
+/*Media Queries*/
 
 @media (max-width: 700px) {
   html {
@@ -570,16 +572,7 @@ a > i:hover {
   #scheduling,
   #box,
   .todoForm {
-    border: none;
-    box-shadow: none;
-    background-color: #ffffff00;
-    padding: 0;
-  }
-
-  button,
-  input {
-    padding: 1rem 1rem;
-    height: 60px;
+    padding: 2rem;
   }
 
   #reviewForm {
