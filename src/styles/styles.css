@@ -15,8 +15,7 @@
   font-size: 20px;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  overscroll-behavior: none;
+  box-sizing: border-
 }
 
 html {
@@ -570,9 +569,11 @@ a > i:hover {
   #ageForm,
   #scheduling,
   #box,
-  .todo {
-    background-color: var(--bg-color);
-    width: 100vw;
+  .todoForm {
+    border: none;
+    box-shadow: none;
+    background-color: #ffffff00;
+    padding: 0;
   }
 
   button,
