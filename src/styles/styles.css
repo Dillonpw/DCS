@@ -1,13 +1,18 @@
 :root {
+  --bg-color: #0000d0d6;
   --header-bg-color: #0000008b;
   --even-row-color: #d5d1d1;
   --odd-row-color: #e1e0e0;
   --work-highlight: #e6f7ff;
   --off-highlight: #ffedea;
+  --button-color: #ffd700;
+  --button-active: #dc143c;
 }
 
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 800;
+  font-size: 20px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -89,22 +94,46 @@ h1 {
   margin-left: 1rem;
 }
 
+.reviews {
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
+  background-color: var(--bg-color);
+  box-shadow:
+    3.6px 7.2px 7.2px black,
+    inset 0 0 14px white;
+  margin: 4rem;
+  color: white;
+  border: 3px solid black;
+  border-radius: 0.5rem;
+}
+
+.reviews:hover {
+  box-shadow:
+    0px 2px 2px 0px,
+    inset 0 0 14px white;
+  transform: translateY(2px);
+}
+
 .reviews,
 .videoBox {
-  padding-top: 10rem;
+  margin-top: 10rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 #reviewForm {
   margin-top: 2rem;
+  max-width: 80%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding-bottom: 4rem;
 }
 
+#reviewForm > button {
+  max-width: 15rem;
+}
 .videoBox {
   background-color: black;
   margin-top: 10rem;
@@ -147,7 +176,7 @@ button {
 #moreInfo {
   border: 1px solid black;
   border-radius: 0.25rem;
-  background-color: white;
+  background-color: var(--button-color);
   box-shadow: 1px 3px 2px 1px;
   color: black;
   flex-direction: column;
@@ -196,21 +225,33 @@ button:hover {
 #scheduling,
 #box,
 .todo {
-  color: black;
+  color: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.25rem;
-  max-width: 60%;
+  max-width: 80%;
   min-width: 50%;
   margin-top: 6rem;
   margin-bottom: 6rem;
-  border-radius: 2rem;
-  border: 2px solid gray;
+  border-radius: 0.5rem;
+  border: 3px solid black;
   padding: 5rem;
-  background-color: white;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
+  background-color: var(--bg-color);
   box-shadow:
-    3.6px 7.2px 7.2px hsla(0, 0%, 0%, 0.39),
-    inset 0 0 14px gray;
+    3.6px 7.2px 7.2px black,
+    inset 0 0 14px white;
+}
+#ageForm:hover,
+#scheduling:hover,
+#box:hover,
+.todo:hover {
+  box-shadow:
+    0px 2px 2px 0px,
+    inset 0 0 14px white;
+  transform: translateY(2px);
 }
 
 #ageForm {
@@ -259,7 +300,7 @@ textarea {
 table {
   width: 90%;
   border-collapse: collapse;
-  box-shadow: 3.6px 7.2px 7.2px hsl(0deg 0% 0% / 0.39);
+  box-shadow: 3.6px 7.2px 7.2px black;
 }
 
 th {
@@ -391,13 +432,7 @@ input:checked + .slider:before {
 .todo {
   color: black;
   display: flex;
-  flex-direction: column;
-  margin-top: 6rem;
-  margin-bottom: 6rem;
-  border-radius: 2rem;
-  border: 2px solid gray;
-  padding: 4rem;
-  background-color: white;
+  color: white;
 }
 
 #addForm {
@@ -451,8 +486,7 @@ input:checked + .slider:before {
 }
 
 #taskList > div > button:hover {
-  background-color: red;
-  color: white;
+  background-color: var(--button-active);
 }
 
 footer {
@@ -476,6 +510,10 @@ a > i:hover {
 }
 
 @media (max-width: 700px) {
+  html {
+    font-size: 16px;
+  }
+
   #navBar {
     margin: 0.2rem;
     border-radius: 0.25rem;
@@ -532,11 +570,9 @@ a > i:hover {
   #ageForm,
   #scheduling,
   #box,
-  .todoForm {
-    border: none;
-    box-shadow: none;
-    background-color: #ffffff00;
-    padding: 0;
+  .todo {
+    background-color: var(--bg-color);
+    width: 100vw;
   }
 
   button,
