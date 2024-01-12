@@ -281,24 +281,25 @@ a > i:hover {
   margin-top: 10rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .videoBox {
   background-color: var(--bg-color);
   margin-top: 10rem;
   color: white;
-  padding: 3rem;
+  padding: 1rem;
 }
 
 .videoBox > h2 {
-  margin: 0;
   font-size: 20px;
 }
 
-iframe{
-  border-radius:1rem;
-  margin:2rem;
-  border:none;
+iframe {
+  border-radius: 1rem;
+  border: none;
+  min-width: 0;
 }
 
 .reviews {
@@ -338,8 +339,6 @@ iframe{
   padding: 3rem;
 }
 
-
-
 #reviewForm {
   margin-top: 2rem;
   max-width: 80%;
@@ -351,7 +350,6 @@ iframe{
 #reviewForm > button {
   max-width: 18rem;
 }
-
 
 /* AgeCalc*/
 
@@ -583,13 +581,13 @@ tr:nth-child(odd) {
     padding: 1rem;
   }
 
-  .videoBox{
+  .videoBox {
     margin: 0;
   }
 
   iframe {
-    margin:1rem;
-    padding:0;
+    margin: 0;
+    padding: 0;
     width: 100%;
   }
 
