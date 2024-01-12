@@ -9,7 +9,7 @@ const modal =
   <Modal title={title} content={modal} />
 
   <div id="box">
-    <form onsubmit="getLocation()">
+    <form id ='weatherForm' onsubmit=getLocation()>
       <label for="searchQuery"></label>
       <input
         type="text"
@@ -92,6 +92,9 @@ const modal =
     "mode",
   ) as HTMLInputElement;
 
+
+
+
   tempDataC.style.display = "none";
   visDataEU.style.display = "none";
   windDataEU.style.display = "none";
@@ -119,6 +122,7 @@ const modal =
 
   async function getLocation(e: Event): Promise<void> {
     e.preventDefault();
+  
 
     const response: Response = await fetch(
       `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${searchQueryElement.value}&aqi=no`,
@@ -147,5 +151,22 @@ const modal =
     tempDataC.style.display = isChecked ? "block" : "none";
     visDataEU.style.display = isChecked ? "block" : "none";
     windDataEU.style.display = isChecked ? "block" : "none";
+  });
+
+  function initializeEventListeners() {
+    const weatherForm = document.getElementById(
+      "weatherForm",
+    ) as HTMLFormElement | null;
+    if (weatherForm) {
+      weatherForm.removeEventListener("submit", getLocation as EventListener);
+      weatherForm.addEventListener("submit", getLocation as EventListener);
+    }
+  
+  }
+
+  initializeEventListeners();
+
+  document.addEventListener("astro:after-swap", () => {
+    initializeEventListeners();
   });
 </script>
