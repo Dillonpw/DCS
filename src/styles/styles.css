@@ -188,7 +188,7 @@ textarea {
   font-size: 16px;
   background-color: white;
   min-width: 80px;
-  max-width: 220px;
+  max-width: 420px;
   min-height: 32px;
   box-shadow: 3.6px 7.2px 7.2px hsl(0deg 0% 0% / 0.39);
 }
@@ -349,7 +349,7 @@ iframe{
 }
 
 #reviewForm > button {
-  max-width: 15rem;
+  max-width: 18rem;
 }
 
 
