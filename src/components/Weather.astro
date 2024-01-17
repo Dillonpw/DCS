@@ -5,11 +5,11 @@ const modal =
   "Search for your city or town, and see a few important weather aspects populate below. \nUse the Toggle to switch between Imperial and Metric measurements.";
 ---
 
-<section class="container">
+<main class="container">
   <Modal title={title} content={modal} />
 
   <div id="box">
-    <form id ='weatherForm' onsubmit=getLocation()>
+    <form id="weatherForm" onsubmit="getLocation()">
       <label for="searchQuery"></label>
       <input
         type="text"
@@ -18,7 +18,7 @@ const modal =
         required
         placeholder="Search"
       />
-      <button id="weatherBtn" type="submit"> Go </button>
+      <button id="weatherBtn" type="submit"> Go</button>
     </form>
     <div id="locationDiv">
       <div id="conditionDiv">
@@ -54,7 +54,7 @@ const modal =
     </label>
     <p>Metric</p>
   </div>
-</section>
+</main>
 <script>
   const API_KEY: string = "f65307767e03462881b163921233009";
 
@@ -92,9 +92,6 @@ const modal =
     "mode",
   ) as HTMLInputElement;
 
-
-
-
   tempDataC.style.display = "none";
   visDataEU.style.display = "none";
   windDataEU.style.display = "none";
@@ -122,7 +119,6 @@ const modal =
 
   async function getLocation(e: Event): Promise<void> {
     e.preventDefault();
-  
 
     const response: Response = await fetch(
       `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${searchQueryElement.value}&aqi=no`,
@@ -161,7 +157,6 @@ const modal =
       weatherForm.removeEventListener("submit", getLocation as EventListener);
       weatherForm.addEventListener("submit", getLocation as EventListener);
     }
-  
   }
 
   initializeEventListeners();

@@ -20,7 +20,7 @@ const AddTask: React.FC<AddTaskProps> = ({ onAddTask }) => {
         id="taskInput"
         type="text"
         value={input}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>,): void =>
+        onChange={(e: React.ChangeEvent<HTMLInputElement>): void =>
           setInput(e.target.value)
         }
         placeholder="What else?"
