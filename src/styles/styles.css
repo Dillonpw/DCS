@@ -162,7 +162,7 @@ button:hover {
   min-width: 50%;
   margin-top: 6rem;
   margin-bottom: 6rem;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   padding: 5rem;
   transition:
     box-shadow 0.2s,
@@ -171,6 +171,7 @@ button:hover {
   box-shadow:
     2px 10px 10px black,
     inset 4px 2px 14px gray;
+    border:2px solid black;
 }
 
 input,
@@ -306,7 +307,8 @@ iframe {
     inset 4px 2px 14px gray;
   margin: 4rem;
   color: white;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
+  border: 2px solid black;
 }
 
 #reviewBox {
