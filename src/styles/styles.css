@@ -35,8 +35,16 @@ body > h1 {
 }
 
 .header {
-  box-shadow: 1px 6px 2px 1px;
-  background-color: var(--even-row-color);
+  border-bottom: 8px solid black;
+  border-bottom-left-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+  background-color: var(--bg-color);
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #navHeader {
@@ -81,15 +89,6 @@ li {
   transform: translateY(2px);
 }
 
-.header {
-  padding: 1rem 2rem;
-  margin-bottom: 2rem;
-  color: black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 20px;
-}
 
 .header > img {
   width: 90px;
@@ -170,7 +169,7 @@ button:hover {
     transform 0.2s;
   background-color: var(--bg-color);
   box-shadow:
-    2px 10px 10px black,
+    5px 8px 4px black,
     inset 4px 2px 14px gray;
   border: 2px solid black;
 }
@@ -304,7 +303,7 @@ iframe {
     transform 0.2s;
   background-color: var(--bg-color);
   box-shadow:
-    2px 10px 10px black,
+    5px 8px 4px black,
     inset 4px 2px 14px gray;
   margin: 4rem;
   color: white;
