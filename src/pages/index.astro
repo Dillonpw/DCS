@@ -1,11 +1,15 @@
 ---
+import Modal from "../components/Modal.astro";
 import Layout from "../layouts/Layout.astro";
 import Reviews from "../components/Reviews.astro";
 import Iframe from "../components/Iframe.astro";
 const title = "911 Dispatcher Cheat Sheet";
+const modal = "Hello and welcome! We're thrilled to have you here. This website is like a trusty toolbelt, specially crafted for 911 Emergency Dispatchers. It's all about making your important job a little easier. Think of this site as a growing tree – we're always sprouting new features and improvements. Our goal? To help you manage emergency situations more smoothly and efficiently. Stay tuned for exciting updates, and remember, this space is evolving just for you. Let's make every emergency response a bit more streamlined together!"
+
 ---
 
 <Layout title={title}>
+  <Modal content={modal}/>
   <Iframe />
   <Reviews />
 </Layout>

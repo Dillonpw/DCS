@@ -1,10 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Modal from "../components/Modal.astro";
 import Weather from "../components/Weather.astro";
 const title = "Weather";
-
+const modal =
+  "Search for your city or town, and see a few important weather aspects populate below. \nUse the Toggle to switch between Imperial and Metric measurements.";
 ---
 
 <Layout title={title}>
+  <Modal content={modal} />
     <Weather>
 </Layout>

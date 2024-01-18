@@ -1,14 +1,9 @@
 ---
-import Modal from "./Modal.astro";
-const title = "More Info";
-const modal =
-  "Fill in all of the boxes below to quickly see your work schedule for the number of days you decide. Make sure you start the scheduling on the first day of your work rotation! The data you type into the boxes below will be saved on your device's browser for 30 days so you will not be expetced to remember every detail.";
+
 ---
 
 <main>
   <div class="container">
-    <Modal title={title} content={modal} />
-
     <form id="scheduling">
       <label for="workDays">Work Days:</label>
       <input type="number" id="workDays" min="1" placeholder="4" required />

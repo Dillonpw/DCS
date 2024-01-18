@@ -1,13 +1,8 @@
 ---
-import Modal from "./Modal.astro";
-const title = "More Info";
-const modal =
-  "Search for your city or town, and see a few important weather aspects populate below. \nUse the Toggle to switch between Imperial and Metric measurements.";
+
 ---
 
 <main class="container">
-  <Modal title={title} content={modal} />
-
   <div id="box">
     <form id="weatherForm" onsubmit="getLocation()">
       <label for="searchQuery"></label>

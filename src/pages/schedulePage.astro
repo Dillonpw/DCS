@@ -1,8 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Schedule from "../components/ScheduleComp.astro";
+import Modal from "../components/Modal.astro";
 const title = "Schedule Tracker"
+const modal =
+  "Fill in all of the boxes below to quickly see your work schedule for the number of days you decide. Make sure you start the scheduling on the first day of your work rotation! The data you type into the boxes below will be saved on your device's browser for 30 days so you will not be expetced to remember every detail.";
 ---
 <Layout title={title}>
+    <Modal content={modal} />
 <Schedule/>
 </Layout>
