@@ -27,6 +27,7 @@ html {
 body {
   min-height: 100%;
   margin: 0;
+  background-color: rgb(226, 223, 207);
 }
 
 body > h1 {
@@ -36,10 +37,7 @@ body > h1 {
 
 .header {
   border-bottom: 8px solid black;
-  border-bottom-left-radius: .5rem;
-  border-bottom-right-radius: .5rem;
   background-color: var(--bg-color);
-  box-shadow: inset 0 -5px 10px white;
   padding: 1rem 1.5rem;
   margin-bottom: 2rem;
   color: black;
@@ -86,7 +84,7 @@ li {
 }
 
 .menu:hover {
-  box-shadow: 0px 2px 2px 0px;
+  box-shadow: 0px 1px 2px 0px;
   transform: translateY(2px);
 }
 
@@ -122,7 +120,7 @@ button {
 
 button:hover {
   cursor: pointer;
-  box-shadow: 0px 2px 2px 0px;
+  box-shadow: 0px 1px 2px 0px;
   transform: translateY(2px);
 }
 
@@ -163,16 +161,13 @@ button:hover {
   min-width: 50%;
   margin-top: 6rem;
   margin-bottom: 6rem;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  border: 8px solid black;
   padding: 5rem;
   transition:
     box-shadow 0.2s,
     transform 0.2s;
   background-color: var(--bg-color);
-  box-shadow:
-    5px 8px 4px black,
-    inset 4px 2px 14px gray;
-  border: 2px solid black;
 }
 
 input,
@@ -258,7 +253,7 @@ footer {
   text-align: left;
   font-size: 14px;
   background-color: black;
-  box-shadow: inset 0px 0px 6px white;
+  box-shadow: inset 0px 0px 6px gray;
 }
 
 footer a {
@@ -303,13 +298,10 @@ iframe {
     box-shadow 0.2s,
     transform 0.2s;
   background-color: var(--bg-color);
-  box-shadow:
-    5px 8px 4px black,
-    inset 4px 2px 14px gray;
   margin: 4rem;
   color: white;
-  border-radius: 0.25rem;
-  border: 2px solid black;
+  border-radius: 0.5rem;
+  border: 8px solid black;
 }
 
 #reviewBox {
@@ -416,6 +408,7 @@ tr:nth-child(odd) {
   align-items: center;
   text-align: center;
   margin-bottom: 1rem;
+
 }
 
 #box > form {
@@ -443,6 +436,7 @@ tr:nth-child(odd) {
   color: black;
   display: flex;
   color: white;
+  margin: 1rem;
 }
 
 #addForm {
@@ -555,15 +549,16 @@ tr:nth-child(odd) {
     text-align: center;
     font-size: 16px;
     color: black;
-    padding:0
+    padding:4;
     border-top: 1px solid black;
   }
 
   #ageForm,
   #scheduling,
   #box,
-  .todoForm {
-    padding: 2rem;
+  .todo {
+    padding: 1.8rem;
+    margin:1rem;
   }
 
   #reviewForm {
