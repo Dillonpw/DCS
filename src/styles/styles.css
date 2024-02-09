@@ -27,7 +27,7 @@ html {
 body {
   min-height: 100%;
   margin: 0;
-  background-color: rgb(226, 223, 207);
+  background-color: white;
 }
 
 body > h1 {
@@ -36,7 +36,6 @@ body > h1 {
 }
 
 .header {
-  border-bottom: 8px solid black;
   background-color: var(--bg-color);
   padding: 1rem 1.5rem;
   margin-bottom: 2rem;
@@ -87,7 +86,6 @@ li {
   box-shadow: 0px 1px 2px 0px;
   transform: translateY(2px);
 }
-
 
 .header > img {
   width: 90px;
@@ -159,10 +157,9 @@ button:hover {
   grid-gap: 0.25rem;
   max-width: 80%;
   min-width: 50%;
-  margin-top: 6rem;
+  margin-top: 3rem;
   margin-bottom: 6rem;
   border-radius: 0.5rem;
-  border: 8px solid black;
   padding: 5rem;
   transition:
     box-shadow 0.2s,
@@ -266,9 +263,16 @@ a > i:hover {
 
 /* Home Page*/
 
+#intro {
+  margin-top: 1rem;
+  width: calc(100% - padding);
+  padding: 3rem;
+  padding-bottom: 0;
+  line-height: 1.4;
+}
+
 .reviews,
 .videoBox {
-  margin-top: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -279,11 +283,12 @@ a > i:hover {
   background-color: var(--bg-color);
   margin-top: 10rem;
   color: white;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .videoBox > h2 {
   font-size: 20px;
+  text-align: center;
 }
 
 iframe {
@@ -298,13 +303,12 @@ iframe {
     box-shadow 0.2s,
     transform 0.2s;
   background-color: var(--bg-color);
-  margin: 4rem;
   color: white;
-  border-radius: 0.5rem;
-  border: 8px solid black;
+  width: 100%;
 }
 
 #reviewBox {
+  border-top: 44px solid white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -322,7 +326,7 @@ iframe {
 
 #reviewForm {
   margin-top: 2rem;
-  max-width: 80%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -374,7 +378,6 @@ iframe {
 table {
   width: 90%;
   border-collapse: collapse;
-  box-shadow: 3.6px 7.2px 7.2px black;
 }
 
 th {
@@ -408,7 +411,6 @@ tr:nth-child(odd) {
   align-items: center;
   text-align: center;
   margin-bottom: 1rem;
-
 }
 
 #box > form {
@@ -549,7 +551,7 @@ tr:nth-child(odd) {
     text-align: center;
     font-size: 16px;
     color: black;
-    padding:4;
+    padding: 4;
     border-top: 1px solid black;
   }
 
@@ -558,7 +560,7 @@ tr:nth-child(odd) {
   #box,
   .todo {
     padding: 1.8rem;
-    margin:1rem;
+    margin: 1rem;
   }
 
   #reviewForm {
