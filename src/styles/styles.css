@@ -402,6 +402,13 @@ tr:nth-child(odd) {
   text-align: center;
 }
 
+/* Map */
+
+#map{
+  height: 400px;
+  width: 100%;
+}
+
 /* Weather*/
 
 #box {

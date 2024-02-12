@@ -1,0 +1,19 @@
+---
+import mapboxgl from 'mapbox-gl';
+const mapboxApiKey = import.meta.env.VITE_API_KEY;
+---
+
+
+<div id="map" style="width: 400px; height: 300px;"></div>
+
+<script type="module">
+  mapboxgl.accessToken = { mapboxApiKey };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    var map = new mapboxgl.Map({
+      container: 'map', 
+      style: 'mapbox://styles/mapbox/streets-v11'
+    });
+  });
+</script>
+
