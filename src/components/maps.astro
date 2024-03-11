@@ -1,19 +1,42 @@
 ---
-import mapboxgl from 'mapbox-gl';
-const mapboxApiKey = import.meta.env.VITE_API_KEY;
+
 ---
 
-
-<div id="map" style="width: 400px; height: 300px;"></div>
+<div>
+  <form id="searchForm" action="https://api.mapbox.com/search/searchbox/v1/suggest">
+    <mapbox-search-box
+      id="mapForm"
+      access-token={import.meta.env.MAPBOX_API_KEY}
+      proximity="0,0"
+    >
+      <input
+        name="address"
+        placeholder="Address"
+        type="text"
+        autocomplete="street-address"
+      />
+      <button type="submit">Search</button>
+    </mapbox-search-box>
+  </form>
+  <div id="map"></div>
+</div>
 
 <script type="module">
-  mapboxgl.accessToken = { mapboxApiKey };
-
-  document.addEventListener('DOMContentLoaded', () => {
-    var map = new mapboxgl.Map({
-      container: 'map', 
-      style: 'mapbox://styles/mapbox/streets-v11'
-    });
+  mapboxgl.accessToken = import.meta.env.MAPBOX_API_KEY;
+  const map = new mapboxgl.Map({
+    container: "map", // container ID
+    center: [-74.5, 40], // starting position [lng, lat]
+    zoom: 9, // starting zoom
   });
-</script>
 
+  const searchForm = document.getElementById('searchForm');
+  searchForm.addEventListener('submit', function(event) {
+    const searchInput = document.querySelector('input[name="address"]').value;
+    const searchEndpoint = `https://api.mapbox.com/search/searchbox/v1/suggest?q=${searchInput}`;
+    searchForm.setAttribute('action', searchEndpoint);
+  });
+
+  const search = new MapboxSearchBox();
+  search.accessToken = import.meta.env.MAPBOX_API_KEY;
+  map.addControl(search);
+</script>

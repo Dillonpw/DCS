@@ -404,9 +404,24 @@ tr:nth-child(odd) {
 
 /* Map */
 
-#map{
-  height: 400px;
-  width: 100%;
+#map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem;
+  width: auto;
+  height: 700px;
+  
+}
+
+#mapForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#mapForm input{
+  width: 24rem;
 }
 
 /* Weather*/

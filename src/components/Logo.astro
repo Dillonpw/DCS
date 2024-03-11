@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
+
 
 ---
 
-<img src="/logo.svg" height="auto" width="auto" alt="logo" />
+<Image src="/logo.svg" height={100} width={100} alt="logo" loading={"eager"}/>
