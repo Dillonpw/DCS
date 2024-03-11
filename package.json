@@ -1,7 +1,7 @@
 {
   "name": "dsc",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -27,8 +27,8 @@
     "@types/node": "^20.11.17",
     "@types/react": "^18.2.46",
     "@types/react-dom": "^18.2.18",
-    "prettier": "^3.1.1",
-    "prettier-plugin-astro": "^0.12.2",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.12.3",
     "typescript": "^5.3.3"
   }
 }
