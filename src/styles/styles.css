@@ -7,6 +7,7 @@
   --work-highlight: #e6f7ff;
   --off-highlight: #ffedea;
   --button-color: #ffd700;
+  --button-hover: rgb(224, 181, 8);
   --button-active: #dc143c;
 }
 
@@ -43,6 +44,8 @@ body > h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 0 0 1rem 1rem;
+  border-bottom: 9px solid black;
 }
 
 #navHeader {
@@ -103,6 +106,11 @@ h1 {
   align-items: center;
 }
 
+.infoBox:hover {
+  background-color: var(--button-hover);
+
+}
+
 button {
   font-size: 16px;
   border: 1px solid black;
@@ -120,6 +128,8 @@ button:hover {
   cursor: pointer;
   box-shadow: 0px 1px 2px 0px;
   transform: translateY(2px);
+  background-color: var(--button-hover);
+
 }
 
 #moreInfo {
@@ -141,6 +151,8 @@ button:hover {
 #moreInfo:hover {
   box-shadow: 0px 2px 2px 0px;
   transform: translateY(2px);
+  background-color: var(--button-hover);
+
 }
 
 #moreInfo > p {
@@ -277,6 +289,8 @@ a > i:hover {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  margin: 1rem;
+  max-width: 95%;
 }
 
 .videoBox {
@@ -551,6 +565,7 @@ tr:nth-child(odd) {
     cursor: pointer;
     box-shadow: 0px 2px 2px 0px;
     transform: translateY(2px);
+    background-color: var(--button-hover);
   }
 
   #dropdown {
@@ -575,7 +590,13 @@ tr:nth-child(odd) {
     color: black;
     padding: 4;
     border-top: 1px solid black;
+    text-decoration: none;
   }
+
+  #dropdown a:hover {
+    background-color: var(--button-hover) ;
+  }
+  
 
   #ageForm,
   #scheduling,
