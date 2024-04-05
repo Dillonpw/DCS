@@ -106,11 +106,6 @@ h1 {
   align-items: center;
 }
 
-.infoBox:hover {
-  background-color: var(--button-hover);
-
-}
-
 button {
   font-size: 16px;
   border: 1px solid black;
@@ -129,7 +124,6 @@ button:hover {
   box-shadow: 0px 1px 2px 0px;
   transform: translateY(2px);
   background-color: var(--button-hover);
-
 }
 
 #moreInfo {
@@ -152,7 +146,6 @@ button:hover {
   box-shadow: 0px 2px 2px 0px;
   transform: translateY(2px);
   background-color: var(--button-hover);
-
 }
 
 #moreInfo > p {
@@ -425,16 +418,15 @@ tr:nth-child(odd) {
   margin: 4rem;
   width: auto;
   height: 700px;
-  
 }
 
-#mapForm{
+#mapForm {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#mapForm input{
+#mapForm input {
   width: 24rem;
 }
 
@@ -594,9 +586,8 @@ tr:nth-child(odd) {
   }
 
   #dropdown a:hover {
-    background-color: var(--button-hover) ;
+    background-color: var(--button-hover);
   }
-  
 
   #ageForm,
   #scheduling,
