@@ -1,0 +1,1 @@
+function o(){const e=document.getElementById("dropdown");e?e.classList.toggle("show"):console.error("Dropdown element not found")}document.addEventListener("click",e=>{(e.target.matches("#navHeader")||e.target.closest("#navHeader"))&&o()});
