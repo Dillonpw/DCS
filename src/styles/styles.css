@@ -346,10 +346,12 @@ iframe {
 #ageForm {
   grid-template-columns: 1fr;
   gap: 2rem;
+  max-width: 80%;
 }
 
-#ageForm > button {
-  max-width: 15rem;
+#weatherBtn{
+  max-width:15rem;
+  margin:2rem;
 }
 
 #ageForm {
