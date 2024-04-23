@@ -155,7 +155,7 @@ button:hover {
 #ageForm,
 #scheduling,
 #box,
-.todo {
+.todo, {
   color: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -282,8 +282,12 @@ a > i:hover {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  margin: 1rem;
-  max-width: 95%;
+  width: 100%;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
+  background-color: var(--bg-color);
+  color: white;
 }
 
 .videoBox {
@@ -304,15 +308,7 @@ iframe {
   min-width: 0;
 }
 
-.reviews,
-.videoBox {
-  transition:
-    box-shadow 0.2s,
-    transform 0.2s;
-  background-color: var(--bg-color);
-  color: white;
-  width: 100%;
-}
+
 
 #reviewBox {
   border-top: 44px solid white;
@@ -321,6 +317,7 @@ iframe {
   justify-content: center;
   align-items: center;
   width: 100%;
+  
 }
 
 #reviewBox > h3 {
@@ -332,8 +329,8 @@ iframe {
 }
 
 #reviewForm {
-  margin-top: 2rem;
-  max-width: 100%;
+  margin: 2rem;
+  max-width: 95%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -341,6 +338,7 @@ iframe {
 
 #reviewForm > button {
   max-width: 18rem;
+  justify-content: center;
 }
 
 /* AgeCalc*/
@@ -371,6 +369,15 @@ iframe {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#scheduling{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+
 }
 
 #tableWrapper {
