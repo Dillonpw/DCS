@@ -272,7 +272,7 @@ a > i:hover {
   margin-top: 1rem;
   width: calc(100% - padding);
   padding: 3rem;
-  padding-bottom: 0;
+  padding-bottom: 2rem;
   line-height: 1.4;
 }
 
@@ -303,7 +303,6 @@ a > i:hover {
 }
 
 iframe {
-  border-radius: 1rem;
   border: none;
   min-width: 0;
 }
