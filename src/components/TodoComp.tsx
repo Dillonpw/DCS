@@ -39,7 +39,7 @@ const Todo: React.FC = () => {
   }
 
   return (
-    <div className="container todo">
+    <div className="todo">
       <AddTask onAddTask={handleAddTask} />
       <TaskList
         tasks={tasks}

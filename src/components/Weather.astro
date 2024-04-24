@@ -15,6 +15,14 @@
       />
       <button id="weatherBtn" type="submit"> Go</button>
     </form>
+    <div class="toggleInfo">
+      <p>Imperial</p>
+      <label for="mode" class="switch">
+        <input id="mode" type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+      <p>Metric</p>
+    </div>
     <div id="locationDiv">
       <div id="conditionDiv">
         <h2>Condition</h2>
@@ -41,14 +49,7 @@
       </div>
     </div>
   </div>
-  <div class="toggleInfo">
-    <p>Imperial</p>
-    <label for="mode" class="switch">
-      <input id="mode" type="checkbox" />
-      <span class="slider round"></span>
-    </label>
-    <p>Metric</p>
-  </div>
+
 </main>
 <script>
   const API_KEY: string = "f65307767e03462881b163921233009";

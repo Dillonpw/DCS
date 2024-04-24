@@ -2,12 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import Reviews from "../components/Reviews.astro";
 import Iframe from "../components/Iframe.astro";
-const title = "911 Dispatcher Cheat Sheet";
 const modal = "This website is specially crafted for 911 Emergency Dispatchers, and it's all about making your important job a little easier. Visit often to see our new features and improvements."
 
 ---
 
-<Layout title={title}>
+<Layout>
   <p id="intro">{modal}</p>
   <Iframe />
   <Reviews />

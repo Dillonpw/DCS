@@ -1,13 +1,13 @@
 /* Utilities*/
 :root {
-  --bg-color: #0000d0d6;
-  --header-bg-color: #0000008b;
+  --bg-color: #ffffff;
+  --header-bg-color: #000000d4;
   --even-row-color: #d5d1d1;
   --odd-row-color: #e1e0e0;
   --work-highlight: #e6f7ff;
   --off-highlight: #ffedea;
   --button-color: #ffd700;
-  --button-hover: rgb(224, 181, 8);
+  --button-hover: rgb(249, 205, 28);
   --button-active: #dc143c;
 }
 
@@ -17,7 +17,7 @@
   font-size: 20px;
   margin: 0;
   padding: 0;
-  box-sizing: border-;
+  color: black;
 }
 
 html {
@@ -25,27 +25,20 @@ html {
   background-color: white;
 }
 
-body {
-  min-height: 100%;
-  margin: 0;
-  background-color: white;
-}
 
 body > h1 {
   font-size: 36px;
   margin-left: 4rem;
+  margin-top: 6rem;
 }
 
 .header {
-  background-color: var(--bg-color);
+  background-color: var(--header-bg-color);
   padding: 1rem 1.5rem;
-  margin-bottom: 2rem;
   color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 0 0 1rem 1rem;
-  border-bottom: 9px solid black;
 }
 
 #navHeader {
@@ -72,7 +65,7 @@ li {
   border: 1px solid black;
   border-radius: 0.25rem;
   background-color: gold;
-  box-shadow: 1px 3px 2px 1px;
+  box-shadow: 1px 3px 2px 1px white;
   color: black;
   display: flex;
   flex-direction: column;
@@ -133,7 +126,7 @@ button:hover {
   box-shadow: 1px 3px 2px 1px;
   color: black;
   flex-direction: column;
-  padding: 0.2rem 3rem;
+  padding: 0.2rem 1rem;
   user-select: none;
   transition:
     box-shadow 0.2s,
@@ -145,7 +138,6 @@ button:hover {
 #moreInfo:hover {
   box-shadow: 0px 2px 2px 0px;
   transform: translateY(2px);
-  background-color: var(--button-hover);
 }
 
 #moreInfo > p {
@@ -155,14 +147,14 @@ button:hover {
 #ageForm,
 #scheduling,
 #box,
-.todo, {
+.todo {
   color: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.25rem;
   max-width: 80%;
   min-width: 50%;
-  margin-top: 3rem;
+
   margin-bottom: 6rem;
   border-radius: 0.5rem;
   padding: 5rem;
@@ -269,11 +261,11 @@ a > i:hover {
 /* Home Page*/
 
 #intro {
-  margin-top: 1rem;
   width: calc(100% - padding);
-  padding: 3rem;
-  padding-bottom: 2rem;
+  padding: 5rem 2rem;
   line-height: 1.4;
+  background-color: var(--button-color);
+  color: black;
 }
 
 .reviews,
@@ -287,40 +279,39 @@ a > i:hover {
     box-shadow 0.2s,
     transform 0.2s;
   background-color: var(--bg-color);
-  color: white;
 }
 
 .videoBox {
   background-color: var(--bg-color);
-  margin-top: 10rem;
-  color: white;
-  padding: 1rem 0;
+  margin-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .videoBox > h2 {
   font-size: 20px;
   text-align: center;
+  margin: 2rem;
 }
 
 iframe {
   border: none;
   min-width: 0;
+  border-radius: 0.5rem;
 }
 
-
-
 #reviewBox {
-  border-top: 44px solid white;
   display: flex;
   flex-direction: column;
+  padding: 5rem 2rem;
   justify-content: center;
   align-items: center;
   width: 100%;
-  
+  background-color: var(--header-bg-color);
 }
 
 #reviewBox > h3 {
   margin: 2rem;
+  color: white;
 }
 
 #reviewsContainer {
@@ -346,39 +337,33 @@ iframe {
   grid-template-columns: 1fr;
   gap: 2rem;
   max-width: 80%;
-}
-
-#weatherBtn{
-  max-width:15rem;
-  margin:2rem;
-}
-
-#ageForm {
   min-height: 300px;
   max-height: none;
 }
 
 #ageForm > input {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+#ageForm > button {
+  margin-top: 0;
+  max-width: 15rem;
 }
 
 /* Schedule*/
 
-.container,
 #tableWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
-#scheduling{
+#scheduling {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 3rem;
-
 }
 
 #tableWrapper {
@@ -447,6 +432,7 @@ tr:nth-child(odd) {
   align-items: center;
   text-align: center;
   margin-bottom: 1rem;
+  margin-top: 0;
 }
 
 #box > form {
@@ -473,6 +459,9 @@ tr:nth-child(odd) {
 .todo {
   color: black;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: white;
   margin: 1rem;
 }
@@ -548,22 +537,19 @@ tr:nth-child(odd) {
     font-size: 30px;
     border: 1px solid black;
     border-radius: 0.25rem;
-    background-color: gold;
-    box-shadow: 1px 3px 2px 1px;
+    background-color: var(--button-color);
+    box-shadow: none;
     color: black;
     display: flex;
     flex-direction: column;
     padding: 0.8rem 3rem;
     align-items: center;
     user-select: none;
-    transition:
-      box-shadow 0.2s,
-      transform 0.2s;
+    transition: transform 0.2s;
   }
 
   #navHeader:hover {
     cursor: pointer;
-    box-shadow: 0px 2px 2px 0px;
     transform: translateY(2px);
     background-color: var(--button-hover);
   }
@@ -586,6 +572,7 @@ tr:nth-child(odd) {
 
   #dropdown a {
     text-align: center;
+    box-shadow: none;
     font-size: 16px;
     color: black;
     padding: 4;
@@ -597,8 +584,6 @@ tr:nth-child(odd) {
     background-color: var(--button-hover);
   }
 
-  #ageForm,
-  #scheduling,
   #box,
   .todo {
     padding: 1.8rem;
@@ -617,10 +602,6 @@ tr:nth-child(odd) {
     margin: 0;
     padding: 0;
     width: 100%;
-  }
-
-  #ageForm > * {
-    margin-top: 2rem;
   }
 
   #addForm {
