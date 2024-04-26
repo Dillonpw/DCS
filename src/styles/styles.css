@@ -25,7 +25,6 @@ html {
   background-color: white;
 }
 
-
 body > h1 {
   font-size: 36px;
   margin-left: 4rem;
@@ -301,16 +300,19 @@ iframe {
 #reviewBox {
   display: flex;
   flex-direction: column;
-  padding: 5rem 2rem;
+  padding: 5rem 0rem;
   justify-content: center;
   align-items: center;
   width: 100%;
   background-color: var(--header-bg-color);
 }
 
-#reviewBox > h3, 
+#reviewBox > h3,
 #reviewBox > form > label {
   color: white;
+}
+#reviewBox > h3 {
+  text-align: center;
 }
 
 #reviewsContainer {
@@ -319,7 +321,7 @@ iframe {
 
 #reviewForm {
   margin: 2rem;
-  max-width: 95%;
+  max-width: 85%;
   display: flex;
   flex-direction: column;
   gap: 1rem;

@@ -14,20 +14,28 @@
   </div>
 </div>
 <script>
-  function toggleDropdown() {
+
+  document.addEventListener("click", (e: MouseEvent) => {
+  const navHeader = document.getElementById("navHeader");
+  if (e.target === navHeader) {
+    toggleDropdown();
+  } else {
     const dropdown = document.getElementById("dropdown");
-    if (dropdown) {
-      dropdown.classList.toggle("show");
-    } else {
-      console.error("Dropdown element not found");
+    if (dropdown && dropdown.classList.contains("show")) {
+      dropdown.classList.remove("show");
     }
   }
+});
 
-  document.addEventListener("click", (e) => {
-    const isNavHeader =
-      document.getElementById("navHeader")
-    if (isNavHeader) {
-      toggleDropdown();
-    }
-  });
+function toggleDropdown(): void {
+  const dropdown = document.getElementById("dropdown");
+  if (dropdown) {
+    dropdown.classList.toggle("show");
+  } else {
+    console.error("Dropdown element not found");
+  }
+}
+
+
 </script>
+ 
