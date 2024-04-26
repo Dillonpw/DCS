@@ -29,12 +29,11 @@ html {
 body > h1 {
   font-size: 36px;
   margin-left: 4rem;
-  margin-top: 6rem;
+  margin-top: 1rem;
 }
 
 .header {
-  background-color: var(--header-bg-color);
-  padding: 1rem 1.5rem;
+  padding: 0rem 1rem;
   color: black;
   display: flex;
   justify-content: space-between;
