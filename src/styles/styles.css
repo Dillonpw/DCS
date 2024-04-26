@@ -309,8 +309,8 @@ iframe {
   background-color: var(--header-bg-color);
 }
 
-#reviewBox > h3 {
-  margin: 2rem;
+#reviewBox > h3, 
+#reviewBox > form > label {
   color: white;
 }
 
