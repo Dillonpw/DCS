@@ -3,7 +3,10 @@
 ---
 
 <div>
-  <form id="searchForm" action="https://api.mapbox.com/search/searchbox/v1/suggest">
+  <form
+    id="searchForm"
+    action="https://api.mapbox.com/search/searchbox/v1/suggest"
+  >
     <mapbox-search-box
       id="mapForm"
       access-token={import.meta.env.MAPBOX_API_KEY}
@@ -29,11 +32,11 @@
     zoom: 9, // starting zoom
   });
 
-  const searchForm = document.getElementById('searchForm');
-  searchForm.addEventListener('submit', function(event) {
+  const searchForm = document.getElementById("searchForm");
+  searchForm.addEventListener("submit", function (event) {
     const searchInput = document.querySelector('input[name="address"]').value;
     const searchEndpoint = `https://api.mapbox.com/search/searchbox/v1/suggest?q=${searchInput}`;
-    searchForm.setAttribute('action', searchEndpoint);
+    searchForm.setAttribute("action", searchEndpoint);
   });
 
   const search = new MapboxSearchBox();

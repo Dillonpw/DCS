@@ -1,5 +1,7 @@
 ---
+
 ---
+
 <div id="navBar">
   <nav id="navHeader">&#8801;</nav>
   <div id="dropdown">
@@ -12,7 +14,7 @@
   </div>
 </div>
 <script>
- function toggleDropdown() {
+  function toggleDropdown() {
     const dropdown = document.getElementById("dropdown");
     if (dropdown) {
       dropdown.classList.toggle("show");
@@ -21,9 +23,11 @@
     }
   }
 
-  document.addEventListener("click", (event) => {
-    const isNavHeader = event.target.matches("#navHeader") || event.target.closest("#navHeader");
+  document.addEventListener("click", (e) => {
+    const isNavHeader =
+      e.target.matches("#navHeader") || e.target.closest("#navHeader");
     if (isNavHeader) {
       toggleDropdown();
     }
   });
+</script>
