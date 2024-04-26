@@ -25,7 +25,7 @@
 
   document.addEventListener("click", (e) => {
     const isNavHeader =
-      e.target.matches("#navHeader") || e.target.closest("#navHeader");
+      document.getElementById("navHeader")
     if (isNavHeader) {
       toggleDropdown();
     }

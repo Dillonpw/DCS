@@ -1,1 +1,0 @@
-function o(){const e=document.getElementById("moreInfo"),t=document.getElementById("popBtn");if(e&&t){const n=e.style.display==="flex";e.style.display=n?"none":"flex",t.style.display=n?"flex":"none"}}function s(){document.addEventListener("click",e=>{const t=e.target;(t.matches("#popBtn")||t.closest("#moreInfo"))&&o()})}s();
