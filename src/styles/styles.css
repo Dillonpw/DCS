@@ -150,10 +150,10 @@ button:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.25rem;
-  max-width: 80%;
+  max-width: 100%;
   min-width: 50%;
-
-  margin-bottom: 6rem;
+  margin-left: none;
+  margin-right: none;
   border-radius: 0.5rem;
   padding: 5rem;
   transition:
@@ -336,14 +336,14 @@ iframe {
 
 #ageForm {
   grid-template-columns: 1fr;
-  gap: 2rem;
-  max-width: 80%;
   min-height: 300px;
   max-height: none;
+  width: 100%;
 }
 
 #ageForm > input {
   margin-bottom: 1rem;
+  width: 80%;
 }
 
 #ageForm > button {
@@ -580,49 +580,43 @@ tr:nth-child(odd) {
     border-top: 1px solid black;
     text-decoration: none;
   }
-
   #dropdown a:hover {
     background-color: var(--button-hover);
   }
-
   #box,
   .todo {
     padding: 1.8rem;
     margin: 1rem;
   }
-
   #reviewForm {
     padding: 1rem;
   }
-
   .videoBox {
     margin: 0;
   }
-
   iframe {
     margin: 0;
     padding: 0;
     width: 100%;
   }
-
+  #scheduling,
+  #ageForm {
+    width: fit-content;
+  }
   #addForm {
     justify-content: center;
   }
-
   #addForm > input {
     width: 1rem;
   }
-
   a:hover {
     cursor: pointer;
     transform: scale(1.02);
     text-decoration: underline;
   }
-
   form {
     width: 100%;
   }
-
   table {
     width: 80%;
   }
