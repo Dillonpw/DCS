@@ -28,7 +28,7 @@ html {
 body > h1 {
   font-size: 36px;
   margin-left: 4rem;
-  margin-top: 1rem;
+
 }
 
 .header {
@@ -239,7 +239,6 @@ input:checked + .slider:before {
 }
 
 footer {
-  margin-top: 5rem;
   display: flex;
   color: white;
   justify-content: center;
@@ -273,7 +272,6 @@ a > i:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
   width: 100%;
   transition:
     box-shadow 0.2s,
@@ -299,6 +297,7 @@ iframe {
   border-radius: 0.5rem;
 }
 
+
 #reviewBox {
   display: flex;
   flex-direction: column;
@@ -317,9 +316,6 @@ iframe {
   text-align: center;
 }
 
-#reviewsContainer {
-  padding: 3rem;
-}
 
 #reviewForm {
   margin: 2rem;
