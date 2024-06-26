@@ -21,6 +21,7 @@ const TaskList: React.FC<TaskListProps> = ({
     <div id="taskList">
       {tasks.map((task) => (
         <div key={task.id}>
+          <label htmlFor={task.id}></label>
           <input
             id={task.id}
             type="checkbox"
