@@ -1,7 +1,7 @@
 import React from "react";
 
 interface Task {
-  id: number;
+  id: string;
   text: string;
   done: boolean;
 }
@@ -9,7 +9,7 @@ interface Task {
 interface TaskListProps {
   tasks: Task[];
   onChangeTask: (updatedTask: Task) => void;
-  onDeleteTask: (taskId: number) => void;
+  onDeleteTask: (taskId: string) => void;
 }
 
 const TaskList: React.FC<TaskListProps> = ({
@@ -22,7 +22,7 @@ const TaskList: React.FC<TaskListProps> = ({
       {tasks.map((task) => (
         <div key={task.id}>
           <input
-            id="checkbox"
+            id={task.id}
             type="checkbox"
             checked={task.done}
             onChange={() => onChangeTask({ ...task, done: !task.done })}

@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import AddTask from "./AddTask";
 import TaskList from "./TaskList";
+import { v4 as uuidv4 } from "uuid";
 
 interface Task {
-  id: number;
+  id: string;
   text: string;
   done: boolean;
 }
@@ -21,7 +22,7 @@ const Todo: React.FC = () => {
 
   function handleAddTask(text: string) {
     const newTask: Task = {
-      id: nextId++,
+      id: uuidv4(),
       text,
       done: false,
     };
@@ -34,7 +35,7 @@ const Todo: React.FC = () => {
     );
   }
 
-  function handleDeleteTask(taskId: number) {
+  function handleDeleteTask(taskId: string) {
     setTasks(tasks.filter((task) => task.id !== taskId));
   }
 
@@ -50,23 +51,16 @@ const Todo: React.FC = () => {
   );
 };
 
-let nextId = getInitialMaxId() + 1;
-
 function getInitialTasks(): Task[] {
   const savedTasks = Cookies.get("tasks");
   const tasks = savedTasks
     ? JSON.parse(savedTasks)
     : [
-        { id: 0, text: "Log into systems", done: false },
-        { id: 1, text: "Check the schedule", done: false },
-        { id: 2, text: "Test radios and tones", done: false },
+        { id: uuidv4(), text: "Log into systems", done: false },
+        { id: uuidv4(), text: "Check the schedule", done: false },
+        { id: uuidv4(), text: "Test radios and tones", done: false },
       ];
   return tasks;
-}
-
-function getInitialMaxId(): number {
-  const tasks = getInitialTasks();
-  return tasks.reduce((maxId, task) => Math.max(task.id, maxId), -1);
 }
 
 export default Todo;
