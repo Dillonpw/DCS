@@ -2,13 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 import Reviews from "../components/Reviews.astro";
 import Iframe from "../components/Iframe.astro";
+import Modal from "../components/Modal.astro";
 const modal =
-  "This website is specially crafted for 911 Emergency Dispatchers, and it's all about making your important job a little easier. Visit often to see our new features and improvements.";
+  "Specially crafted for 911 Emergency Dispatchers, it's all about making your important job a little easier. Visit often to see our new features and improvements.";
 ---
 
 <Layout>
-  <p id="intro">{modal}</p>
-  <Iframe />
+  <Modal content={modal}/>
+  <Iframe transition:animate="slide" />
   <Reviews />
-
 </Layout>

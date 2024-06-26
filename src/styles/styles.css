@@ -22,23 +22,21 @@
 
 html {
   height: 100%;
-  background-color: white;
+  background-color: #faf9f6;
 }
 
 body > h1 {
   font-size: 36px;
   margin-left: 4rem;
-
 }
 
 .header {
   padding: 0rem 1rem;
   color: black;
+  background-color: var(--header-bg-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 6px solid black;
-  
 }
 
 #navHeader {
@@ -62,10 +60,9 @@ li {
 .menu {
   font-size: 16px;
   cursor: pointer;
-  border: 1px solid black;
   border-radius: 0.25rem;
   background-color: gold;
-  box-shadow: 1px 3px 2px 1px white;
+  box-shadow: 1px 3px 2px 1px #faf9f6;
   color: black;
   display: flex;
   flex-direction: column;
@@ -101,7 +98,6 @@ h1 {
 
 button {
   font-size: 16px;
-  border: 1px solid black;
   border-radius: 0.25rem;
   background-color: gold;
   box-shadow: 1px 3px 2px 1px;
@@ -120,7 +116,6 @@ button:hover {
 }
 
 #moreInfo {
-  border: 1px solid black;
   border-radius: 0.25rem;
   background-color: var(--button-color);
   box-shadow: 1px 3px 2px 1px;
@@ -148,11 +143,10 @@ button:hover {
 #scheduling,
 #box,
 .todo {
-  color: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.25rem;
-  max-width: 100%;
+  max-width: 90%;
   min-width: 50%;
   margin-left: none;
   margin-right: none;
@@ -161,7 +155,6 @@ button:hover {
   transition:
     box-shadow 0.2s,
     transform 0.2s;
-  background-color: var(--bg-color);
 }
 
 input,
@@ -170,7 +163,6 @@ textarea {
   border-radius: 0.5rem;
   padding: 0.5rem;
   font-size: 16px;
-  background-color: white;
   min-width: 80px;
   max-width: 420px;
   min-height: 32px;
@@ -240,13 +232,11 @@ input:checked + .slider:before {
 
 footer {
   display: flex;
-  color: white;
   justify-content: center;
-  padding: 4rem;
-  text-align: left;
+  padding: rem;
+  text-align: center;
   font-size: 14px;
-  background-color: black;
-  box-shadow: inset 0px 0px 6px gray;
+  margin-top: 10rem;
 }
 
 footer a {
@@ -260,10 +250,13 @@ a > i:hover {
 /* Home Page*/
 
 #intro {
-  width: calc(100% - padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   padding: 5rem 2rem;
   line-height: 1.4;
-  background-color: gray;
   color: black;
 }
 
@@ -272,15 +265,12 @@ a > i:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   transition:
     box-shadow 0.2s,
     transform 0.2s;
-  background-color: var(--bg-color);
 }
 
 .videoBox {
-  background-color: var(--bg-color);
   margin-top: 5rem;
   padding-bottom: 5rem;
 }
@@ -297,7 +287,6 @@ iframe {
   border-radius: 0.5rem;
 }
 
-
 #reviewBox {
   display: flex;
   flex-direction: column;
@@ -305,17 +294,11 @@ iframe {
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: var(--header-bg-color);
 }
 
-#reviewBox > h3,
-#reviewBox > form > label {
-  color: white;
-}
 #reviewBox > h3 {
   text-align: center;
 }
-
 
 #reviewForm {
   margin: 2rem;
@@ -336,7 +319,7 @@ iframe {
   grid-template-columns: 1fr;
   min-height: 300px;
   max-height: none;
-  width: 100%;
+  width: 90%;
 }
 
 #ageForm > input {
@@ -356,11 +339,7 @@ iframe {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-
-#tableWrapper {
-  width: 90%;
+  justify-content: center;
 }
 
 #generate {
@@ -393,27 +372,6 @@ tr:nth-child(odd) {
   background-color: var(--odd-row-color);
   height: 3rem;
   text-align: center;
-}
-
-/* Map */
-
-#map {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 4rem;
-  width: auto;
-  height: 700px;
-}
-
-#mapForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#mapForm input {
-  width: 24rem;
 }
 
 /* Weather*/
@@ -466,7 +424,7 @@ tr:nth-child(odd) {
 
 #addForm > input {
   grid-column: 1;
-  min-width: 120px;
+  min-height: 1rem;
   justify-self: center;
 }
 
@@ -580,6 +538,7 @@ tr:nth-child(odd) {
     padding: 1.8rem;
     margin: 1rem;
   }
+
   #reviewForm {
     padding: 1rem;
   }
@@ -595,11 +554,25 @@ tr:nth-child(odd) {
   #ageForm {
     width: fit-content;
   }
+
+  #ageForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 3rem;
+  }
+
+  #ageForm > input {
+    height: 3rem;
+    max-width: 190px;
+    margin: 0;
+  }
+
   #addForm {
     justify-content: center;
   }
   #addForm > input {
-    width: 1rem;
+    width: full;
   }
   a:hover {
     cursor: pointer;
