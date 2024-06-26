@@ -2,11 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import Calculator from "../components/CalculatorComp.astro";
 import Modal from "../components/Modal.astro";
+const title = "911 DSC | Calculator";
 const modal =
   "Need to know a caller or involved party's age in a hurry? Just enter their birth year, and their age will be given back to you instantly based off of the current date.";
 ---
 
-<Layout>
+<Layout title={title}>
   <Modal content={modal} />
-  <Calculator transition:animate="slide" />
+  <Calculator />
 </Layout>

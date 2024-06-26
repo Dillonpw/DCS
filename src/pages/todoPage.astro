@@ -2,13 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import Modal from "../components/Modal.astro";
 import Todo from "../components/TodoStatic.astro";
+const title = "911 DSC | Checklist";
 const modal =
   "Let's make it sure were organized and focused on what's important. Treat this page like your personal checklist – a little hub of efficiency. As you power through your day, tick off each task once it's done. Our goal? To help you keep track of everything, ensuring that nothing slips through the cracks before your shift wraps up. Think of it as your trusty sidekick, keeping you on top of your game.";
 ---
 
-<Layout>
+<Layout title={title}>
   <div class="container">
     <Modal content={modal} />
-    <Todo transition:animate="slide" />
+    <Todo />
   </div>
 </Layout>

@@ -3,12 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import Reviews from "../components/Reviews.astro";
 import Iframe from "../components/Iframe.astro";
 import Modal from "../components/Modal.astro";
+const title = "911 DSC | Home";
 const modal =
   "Specially crafted for 911 Emergency Dispatchers, it's all about making your important job a little easier. Visit often to see our new features and improvements.";
 ---
 
-<Layout>
-  <Modal content={modal}/>
-  <Iframe transition:animate="slide" />
+<Layout title={title}>
+  <Modal content={modal} />
+  <Iframe />
   <Reviews />
 </Layout>

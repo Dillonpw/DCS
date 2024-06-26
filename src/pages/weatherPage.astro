@@ -2,11 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import Modal from "../components/Modal.astro";
 import Weather from "../components/Weather.astro";
+const title = "911 DSC | Weather";
 const modal =
   "Stay informed about the weather conditions in any city or town. This tool helps you understand the weather dynamics that might affect emergency situations. Plus, you can switch between Imperial and Metric measurements for your convenience.";
 ---
 
-<Layout transition:animate="slide">
+<Layout title={title}>
   <Modal content={modal} />
-  <Weather  />
+  <Weather />
 </Layout>
